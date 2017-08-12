@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		929CFF9C1F3F80F4005BBC2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFF9B1F3F80F4005BBC2E /* AppDelegate.swift */; };
-		929CFF9E1F3F80F4005BBC2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFF9D1F3F80F4005BBC2E /* ViewController.swift */; };
-		929CFFA11F3F80F4005BBC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929CFF9F1F3F80F4005BBC2E /* Main.storyboard */; };
 		929CFFA41F3F80F4005BBC2E /* Hesabdar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFA21F3F80F4005BBC2E /* Hesabdar.xcdatamodeld */; };
 		929CFFA61F3F80F4005BBC2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929CFFA51F3F80F4005BBC2E /* Assets.xcassets */; };
 		929CFFA91F3F80F4005BBC2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929CFFA71F3F80F4005BBC2E /* LaunchScreen.storyboard */; };
 		929CFFB41F3F80F4005BBC2E /* HesabdarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFB31F3F80F4005BBC2E /* HesabdarTests.swift */; };
 		929CFFBF1F3F80F5005BBC2E /* HesabdarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFBE1F3F80F5005BBC2E /* HesabdarUITests.swift */; };
+		929CFFEE1F3F8488005BBC2E /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFE81F3F8488005BBC2E /* Account+CoreDataClass.swift */; };
+		929CFFEF1F3F8488005BBC2E /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFE91F3F8488005BBC2E /* Account+CoreDataProperties.swift */; };
+		929CFFF01F3F8488005BBC2E /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFEA1F3F8488005BBC2E /* Transaction+CoreDataClass.swift */; };
+		929CFFF11F3F8488005BBC2E /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFEB1F3F8488005BBC2E /* Transaction+CoreDataProperties.swift */; };
+		929CFFF41F3F8534005BBC2E /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFF21F3F8534005BBC2E /* Tag+CoreDataClass.swift */; };
+		929CFFF51F3F8534005BBC2E /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFF31F3F8534005BBC2E /* Tag+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +41,6 @@
 /* Begin PBXFileReference section */
 		929CFF981F3F80F4005BBC2E /* Hesabdar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hesabdar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CFF9B1F3F80F4005BBC2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		929CFF9D1F3F80F4005BBC2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		929CFFA01F3F80F4005BBC2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		929CFFA31F3F80F4005BBC2E /* Hesabdar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hesabdar.xcdatamodel; sourceTree = "<group>"; };
 		929CFFA51F3F80F4005BBC2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929CFFA81F3F80F4005BBC2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,13 @@
 		929CFFBA1F3F80F5005BBC2E /* HesabdarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HesabdarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CFFBE1F3F80F5005BBC2E /* HesabdarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesabdarUITests.swift; sourceTree = "<group>"; };
 		929CFFC01F3F80F5005BBC2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		929CFFCD1F3F818D005BBC2E /* IRANSans(FaNum).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IRANSans(FaNum).ttf"; sourceTree = "<group>"; };
+		929CFFE81F3F8488005BBC2E /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataClass.swift"; sourceTree = "<group>"; };
+		929CFFE91F3F8488005BBC2E /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		929CFFEA1F3F8488005BBC2E /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		929CFFEB1F3F8488005BBC2E /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		929CFFF21F3F8534005BBC2E /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		929CFFF31F3F8534005BBC2E /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +88,8 @@
 		929CFF8F1F3F80F4005BBC2E = {
 			isa = PBXGroup;
 			children = (
+				929CFFF71F3F8786005BBC2E /* Font */,
+				929CFFF61F3F876E005BBC2E /* Model */,
 				929CFF9A1F3F80F4005BBC2E /* Hesabdar */,
 				929CFFB21F3F80F4005BBC2E /* HesabdarTests */,
 				929CFFBD1F3F80F5005BBC2E /* HesabdarUITests */,
@@ -100,8 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				929CFF9B1F3F80F4005BBC2E /* AppDelegate.swift */,
-				929CFF9D1F3F80F4005BBC2E /* ViewController.swift */,
-				929CFF9F1F3F80F4005BBC2E /* Main.storyboard */,
 				929CFFA51F3F80F4005BBC2E /* Assets.xcassets */,
 				929CFFA71F3F80F4005BBC2E /* LaunchScreen.storyboard */,
 				929CFFAA1F3F80F4005BBC2E /* Info.plist */,
@@ -126,6 +135,27 @@
 				929CFFC01F3F80F5005BBC2E /* Info.plist */,
 			);
 			path = HesabdarUITests;
+			sourceTree = "<group>";
+		};
+		929CFFF61F3F876E005BBC2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				929CFFF21F3F8534005BBC2E /* Tag+CoreDataClass.swift */,
+				929CFFF31F3F8534005BBC2E /* Tag+CoreDataProperties.swift */,
+				929CFFE81F3F8488005BBC2E /* Account+CoreDataClass.swift */,
+				929CFFE91F3F8488005BBC2E /* Account+CoreDataProperties.swift */,
+				929CFFEA1F3F8488005BBC2E /* Transaction+CoreDataClass.swift */,
+				929CFFEB1F3F8488005BBC2E /* Transaction+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		929CFFF71F3F8786005BBC2E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				929CFFCD1F3F818D005BBC2E /* IRANSans(FaNum).ttf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +270,6 @@
 			files = (
 				929CFFA91F3F80F4005BBC2E /* LaunchScreen.storyboard in Resources */,
 				929CFFA61F3F80F4005BBC2E /* Assets.xcassets in Resources */,
-				929CFFA11F3F80F4005BBC2E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929CFFF11F3F8488005BBC2E /* Transaction+CoreDataProperties.swift in Sources */,
+				929CFFEF1F3F8488005BBC2E /* Account+CoreDataProperties.swift in Sources */,
 				929CFFA41F3F80F4005BBC2E /* Hesabdar.xcdatamodeld in Sources */,
-				929CFF9E1F3F80F4005BBC2E /* ViewController.swift in Sources */,
+				929CFFEE1F3F8488005BBC2E /* Account+CoreDataClass.swift in Sources */,
+				929CFFF01F3F8488005BBC2E /* Transaction+CoreDataClass.swift in Sources */,
 				929CFF9C1F3F80F4005BBC2E /* AppDelegate.swift in Sources */,
+				929CFFF51F3F8534005BBC2E /* Tag+CoreDataProperties.swift in Sources */,
+				929CFFF41F3F8534005BBC2E /* Tag+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		929CFF9F1F3F80F4005BBC2E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				929CFFA01F3F80F4005BBC2E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		929CFFA71F3F80F4005BBC2E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
