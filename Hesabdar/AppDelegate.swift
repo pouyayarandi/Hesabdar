@@ -16,7 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let transTable = TransactionTableViewController(nibName: "TransactionTableViewController", bundle: nil)
+        let accountTable = AccountTableViewController(nibName: "AccountTableViewController", bundle: nil)
+        
+        let nav1 = UINavigationController()
+        let nav2 = UINavigationController()
+        
+        nav1.viewControllers = [transTable]
+        nav2.viewControllers = [accountTable]
+        
+        let bar = UITabBarController()
+        bar.viewControllers = [nav1, nav2]
+        
+        window?.rootViewController = bar
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

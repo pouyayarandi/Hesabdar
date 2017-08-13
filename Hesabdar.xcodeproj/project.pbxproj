@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		927DF3211F40479900CE97E7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DF3201F40479900CE97E7 /* Color.swift */; };
+		929C00001F3F88A0005BBC2E /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFFE1F3F88A0005BBC2E /* TransactionTableViewCell.swift */; };
+		929C00011F3F88A0005BBC2E /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929CFFFF1F3F88A0005BBC2E /* TransactionTableViewCell.xib */; };
 		929CFF9C1F3F80F4005BBC2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFF9B1F3F80F4005BBC2E /* AppDelegate.swift */; };
 		929CFFA41F3F80F4005BBC2E /* Hesabdar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFA21F3F80F4005BBC2E /* Hesabdar.xcdatamodeld */; };
 		929CFFA61F3F80F4005BBC2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929CFFA51F3F80F4005BBC2E /* Assets.xcassets */; };
@@ -19,6 +22,12 @@
 		929CFFF11F3F8488005BBC2E /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFEB1F3F8488005BBC2E /* Transaction+CoreDataProperties.swift */; };
 		929CFFF41F3F8534005BBC2E /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFF21F3F8534005BBC2E /* Tag+CoreDataClass.swift */; };
 		929CFFF51F3F8534005BBC2E /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFF31F3F8534005BBC2E /* Tag+CoreDataProperties.swift */; };
+		929CFFFC1F3F8859005BBC2E /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929CFFFA1F3F8859005BBC2E /* TransactionTableViewController.swift */; };
+		929CFFFD1F3F8859005BBC2E /* TransactionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929CFFFB1F3F8859005BBC2E /* TransactionTableViewController.xib */; };
+		92F21B661F40315100C81DAA /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F21B641F40315100C81DAA /* AccountTableViewController.swift */; };
+		92F21B671F40315100C81DAA /* AccountTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92F21B651F40315100C81DAA /* AccountTableViewController.xib */; };
+		92F21B6A1F40317D00C81DAA /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F21B681F40317D00C81DAA /* AccountTableViewCell.swift */; };
+		92F21B6B1F40317D00C81DAA /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92F21B691F40317D00C81DAA /* AccountTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		927DF3201F40479900CE97E7 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		929CFF981F3F80F4005BBC2E /* Hesabdar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hesabdar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CFF9B1F3F80F4005BBC2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		929CFFA31F3F80F4005BBC2E /* Hesabdar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hesabdar.xcdatamodel; sourceTree = "<group>"; };
@@ -58,6 +68,14 @@
 		929CFFEB1F3F8488005BBC2E /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		929CFFF21F3F8534005BBC2E /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		929CFFF31F3F8534005BBC2E /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		929CFFFA1F3F8859005BBC2E /* TransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
+		929CFFFB1F3F8859005BBC2E /* TransactionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionTableViewController.xib; sourceTree = "<group>"; };
+		929CFFFE1F3F88A0005BBC2E /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		929CFFFF1F3F88A0005BBC2E /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		92F21B641F40315100C81DAA /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		92F21B651F40315100C81DAA /* AccountTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewController.xib; sourceTree = "<group>"; };
+		92F21B681F40317D00C81DAA /* AccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		92F21B691F40317D00C81DAA /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +106,11 @@
 		929CFF8F1F3F80F4005BBC2E = {
 			isa = PBXGroup;
 			children = (
-				929CFFF71F3F8786005BBC2E /* Font */,
-				929CFFF61F3F876E005BBC2E /* Model */,
 				929CFF9A1F3F80F4005BBC2E /* Hesabdar */,
 				929CFFB21F3F80F4005BBC2E /* HesabdarTests */,
 				929CFFBD1F3F80F5005BBC2E /* HesabdarUITests */,
 				929CFF991F3F80F4005BBC2E /* Products */,
+				929CFFF71F3F8786005BBC2E /* Font */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +127,9 @@
 		929CFF9A1F3F80F4005BBC2E /* Hesabdar */ = {
 			isa = PBXGroup;
 			children = (
+				929CFFF91F3F8816005BBC2E /* View */,
+				929CFFF81F3F8812005BBC2E /* Controller */,
+				929CFFF61F3F876E005BBC2E /* Model */,
 				929CFF9B1F3F80F4005BBC2E /* AppDelegate.swift */,
 				929CFFA51F3F80F4005BBC2E /* Assets.xcassets */,
 				929CFFA71F3F80F4005BBC2E /* LaunchScreen.storyboard */,
@@ -146,8 +166,10 @@
 				929CFFE91F3F8488005BBC2E /* Account+CoreDataProperties.swift */,
 				929CFFEA1F3F8488005BBC2E /* Transaction+CoreDataClass.swift */,
 				929CFFEB1F3F8488005BBC2E /* Transaction+CoreDataProperties.swift */,
+				927DF3201F40479900CE97E7 /* Color.swift */,
 			);
 			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		929CFFF71F3F8786005BBC2E /* Font */ = {
@@ -156,6 +178,28 @@
 				929CFFCD1F3F818D005BBC2E /* IRANSans(FaNum).ttf */,
 			);
 			name = Font;
+			sourceTree = "<group>";
+		};
+		929CFFF81F3F8812005BBC2E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				929CFFFA1F3F8859005BBC2E /* TransactionTableViewController.swift */,
+				929CFFFE1F3F88A0005BBC2E /* TransactionTableViewCell.swift */,
+				92F21B641F40315100C81DAA /* AccountTableViewController.swift */,
+				92F21B681F40317D00C81DAA /* AccountTableViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		929CFFF91F3F8816005BBC2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				929CFFFB1F3F8859005BBC2E /* TransactionTableViewController.xib */,
+				929CFFFF1F3F88A0005BBC2E /* TransactionTableViewCell.xib */,
+				92F21B651F40315100C81DAA /* AccountTableViewController.xib */,
+				92F21B691F40317D00C81DAA /* AccountTableViewCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +312,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F21B671F40315100C81DAA /* AccountTableViewController.xib in Resources */,
+				92F21B6B1F40317D00C81DAA /* AccountTableViewCell.xib in Resources */,
+				929CFFFD1F3F8859005BBC2E /* TransactionTableViewController.xib in Resources */,
 				929CFFA91F3F80F4005BBC2E /* LaunchScreen.storyboard in Resources */,
+				929C00011F3F88A0005BBC2E /* TransactionTableViewCell.xib in Resources */,
 				929CFFA61F3F80F4005BBC2E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,11 +345,16 @@
 				929CFFF11F3F8488005BBC2E /* Transaction+CoreDataProperties.swift in Sources */,
 				929CFFEF1F3F8488005BBC2E /* Account+CoreDataProperties.swift in Sources */,
 				929CFFA41F3F80F4005BBC2E /* Hesabdar.xcdatamodeld in Sources */,
+				92F21B661F40315100C81DAA /* AccountTableViewController.swift in Sources */,
+				927DF3211F40479900CE97E7 /* Color.swift in Sources */,
 				929CFFEE1F3F8488005BBC2E /* Account+CoreDataClass.swift in Sources */,
 				929CFFF01F3F8488005BBC2E /* Transaction+CoreDataClass.swift in Sources */,
 				929CFF9C1F3F80F4005BBC2E /* AppDelegate.swift in Sources */,
+				929C00001F3F88A0005BBC2E /* TransactionTableViewCell.swift in Sources */,
 				929CFFF51F3F8534005BBC2E /* Tag+CoreDataProperties.swift in Sources */,
+				92F21B6A1F40317D00C81DAA /* AccountTableViewCell.swift in Sources */,
 				929CFFF41F3F8534005BBC2E /* Tag+CoreDataClass.swift in Sources */,
+				929CFFFC1F3F8859005BBC2E /* TransactionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +599,7 @@
 				929CFFC51F3F80F5005BBC2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		929CFFC61F3F80F5005BBC2E /* Build configuration list for PBXNativeTarget "HesabdarTests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +608,7 @@
 				929CFFC81F3F80F5005BBC2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		929CFFC91F3F80F5005BBC2E /* Build configuration list for PBXNativeTarget "HesabdarUITests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +617,7 @@
 				929CFFCB1F3F80F5005BBC2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

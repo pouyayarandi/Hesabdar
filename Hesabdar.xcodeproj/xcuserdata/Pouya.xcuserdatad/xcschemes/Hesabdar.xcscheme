@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "929CFF971F3F80F4005BBC2E"
+               BuildableName = "Hesabdar.app"
+               BlueprintName = "Hesabdar"
+               ReferencedContainer = "container:Hesabdar.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "929CFFAE1F3F80F4005BBC2E"
+               BuildableName = "HesabdarTests.xctest"
+               BlueprintName = "HesabdarTests"
+               ReferencedContainer = "container:Hesabdar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "929CFFB91F3F80F5005BBC2E"
+               BuildableName = "HesabdarUITests.xctest"
+               BlueprintName = "HesabdarUITests"
+               ReferencedContainer = "container:Hesabdar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "929CFF971F3F80F4005BBC2E"
+            BuildableName = "Hesabdar.app"
+            BlueprintName = "Hesabdar"
+            ReferencedContainer = "container:Hesabdar.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "929CFF971F3F80F4005BBC2E"
+            BuildableName = "Hesabdar.app"
+            BlueprintName = "Hesabdar"
+            ReferencedContainer = "container:Hesabdar.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "929CFF971F3F80F4005BBC2E"
+            BuildableName = "Hesabdar.app"
+            BlueprintName = "Hesabdar"
+            ReferencedContainer = "container:Hesabdar.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
