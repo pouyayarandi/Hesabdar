@@ -1,5 +1,5 @@
 //
-//  AccountTableViewController.swift
+//  TagTableViewController.swift
 //  Hesabdar
 //
 //  Created by Pouya on 8/13/17.
@@ -9,49 +9,45 @@
 import UIKit
 import CoreData
 
-class AccountTableViewController: UITableViewController {
+class TagTableViewController: UITableViewController {
     
     var onChooseWindow = false
+    var tags = [Tag]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var accounts = [Account]()
-    let color = Color()
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewConfigs()
         
-        let nib = UINib(nibName: "AccountTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "AccountCell")
+        let nib = UINib(nibName: "TagTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "TagCell")
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setAndFetchAccounts()
+        setAndFetchTags()
         tableView.reloadData()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Init
-    
     convenience init(choosable: Bool) {
-        self.init(nibName: "AccountTableViewController", bundle: nil)
-        onChooseWindow = choosable
+        self.init(nibName: "TagTableViewController", bundle: nil)
+        self.onChooseWindow = choosable
     }
     
     // MARK: - Fetch data
     
-    func setAndFetchAccounts() {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Account")
+    func setAndFetchTags() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tag")
         
         do {
             let result = try context.fetch(fetchRequest)
-            accounts = result as! [Account]
+            tags = result as! [Tag]
         } catch let error as NSError {
             print(error.debugDescription)
         }
@@ -64,48 +60,43 @@ class AccountTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accounts.count
+        return tags.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("AccountTableViewCell", owner: self, options: nil)?.first as! AccountTableViewCell
-        
-        let account = accounts[indexPath.row]
-        cell.configureCell(account: account)
+        let cell = Bundle.main.loadNibNamed("TagTableViewCell", owner: self, options: nil)?.first as! TagTableViewCell
 
+        let tag = tags[indexPath.row]
+        cell.configCell(tag: tag)
+        
         return cell
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            context.delete(accounts[indexPath.row] as NSManagedObject)
-            accounts.remove(at: indexPath.row)
+            context.delete(tags[indexPath.row] as NSManagedObject)
+            tags.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            do {
-                try context.save()
-            } catch let error as NSError {
-                print(error.debugDescription)
-            }
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if onChooseWindow {
             let parent = self.parent as! AddTransactionViewController
-            let account = accounts[indexPath.row]
-            parent.selectedAcc = account
-            parent.accountBtn.setTitle(account.title, for: .normal)
+            let tag = tags[indexPath.row]
+            parent.selectedTag = tag
+            parent.tagBtn.tintColor = tag.getColor()
+            parent.tagBtn.setTitle(tag.title, for: .normal)
             parent.goDown()
         }
     }
-
+    
     // MARK: - View configs
     
     func viewConfigs() {
-        navigationItem.title = "حساب ها"
-        self.navigationController?.navigationBar.barTintColor = color.blue()
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        navigationItem.title = "برچسب ها"
+        //self.navigationController?.navigationBar.barTintColor = color.blue()
+        //self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAdd))
@@ -113,7 +104,8 @@ class AccountTableViewController: UITableViewController {
     }
     
     func goToAdd() {
-        let add = AddAccountViewController(nibName: "AddAccountViewController", bundle: nil)
+        let add = AddTagViewController(nibName: "AddTagViewController", bundle: nil)
+        
         self.navigationController?.pushViewController(add, animated: true)
     }
 

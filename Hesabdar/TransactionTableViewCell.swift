@@ -21,10 +21,11 @@ class TransactionTableViewCell: UITableViewCell {
     func configureCell(transaction: Transaction) {
         self.titleLabel.text = transaction.title
         self.tagLabel.text = transaction.tagName
-        self.valueLabel.text = String(transaction.value)
+        self.valueLabel.text = String(Int(transaction.value))
     }
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var accountLabel: UILabel!
 }
