@@ -97,6 +97,10 @@ class AccountTableViewController: UITableViewController {
             parent.selectedAcc = account
             parent.accountBtn.setTitle(account.title, for: .normal)
             parent.goDown()
+        } else {
+            let account = accounts[indexPath.row]
+            let detail = AccountDetailTableViewController(account: account)
+            self.navigationController?.pushViewController(detail, animated: true)
         }
     }
 

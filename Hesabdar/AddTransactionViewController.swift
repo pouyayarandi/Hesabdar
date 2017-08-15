@@ -13,18 +13,40 @@ class AddTransactionViewController: UIViewController {
     
     var selectedAcc: Account?
     var selectedTag: Tag?
+    var transaction: Transaction?
+    var getting = false
+    var edit = false
+    var index = 0
+
+    var tags = [Tag]()
+    var accounts = [Account]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if edit {
+            titleField.text = transaction?.title
+            if getting {
+                valueField.text = String(Int((transaction?.value)!))
+            } else {
+                valueField.text = String(Int(-(transaction?.value)!))
+            }
+            if transaction?.accID != "0" {
+                selectedAcc = getAccount(id: (transaction?.accID!)!)
+                accountBtn.setTitle(selectedAcc?.title, for: .normal)
+            }
+            if transaction?.tagName != "بدون برچسب" {
+                selectedTag = getTag(title: (transaction?.tagName)!)
+                tagBtn.setTitle(selectedTag?.title, for: .normal)
+            }
+        }
+        
         viewConfigs()
         chooseStack.transform = CGAffineTransform(translationX: 0, y: 250)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBOutlet weak var titleField: UITextField!
@@ -37,16 +59,20 @@ class AddTransactionViewController: UIViewController {
     @IBOutlet weak var tagBtn: UIButton!
     
     @IBAction func showAccount(_ sender: Any) {
+        deleteAllChooseView()
         let accountView = AccountTableViewController(choosable: true)
         accountView.view.frame = chooseView.frame
+        accountView.view.frame.origin.y -= 50
         chooseView.addSubview(accountView.view)
         self.addChildViewController(accountView)
         self.didMove(toParentViewController: accountView)
         goUp()
     }
     @IBAction func showTags(_ sender: Any) {
+        deleteAllChooseView()
         let tagView = TagTableViewController(choosable: true)
         tagView.view.frame = chooseView.frame
+        tagView.view.frame.origin.y -= 50
         chooseView.addSubview(tagView.view)
         self.addChildViewController(tagView)
         self.didMove(toParentViewController: tagView)
@@ -54,6 +80,50 @@ class AddTransactionViewController: UIViewController {
     }
     @IBAction func close(_ sender: Any) {
         goDown()
+    }
+    
+    func setAndFetchAccounts() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Account")
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            accounts = result as! [Account]
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+    }
+    
+    func getAccount(id: String) -> Account {
+        setAndFetchAccounts()
+        for account in accounts {
+            if account.accID == id {
+                return account
+            }
+        }
+        return Account()
+    }
+    
+    func setAndFetchTags() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tag")
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            tags = result as! [Tag]
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+    }
+    
+    func getTag(title: String) -> Tag {
+        setAndFetchTags()
+        for tag in tags {
+            if tag.title == title {
+                return tag
+            }
+        }
+        return Tag()
     }
     
     // MARK: - Init
@@ -64,6 +134,20 @@ class AddTransactionViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    convenience init(getting: Bool) {
+        self.init(nibName: "AddTransactionViewController", bundle: nil)
+        self.getting = getting
+    }
+    
+    convenience init(transaction: Transaction, edit: Bool, getting: Bool, index: Int) {
+        self.init(nibName: "AddTransactionViewController", bundle: nil)
+        self.getting = getting
+        self.edit = edit
+        self.transaction = transaction
+        self.index = index
+        
     }
     
     // MARK: - Control choose view
@@ -79,19 +163,34 @@ class AddTransactionViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: { 
             self.chooseStack.transform = CGAffineTransform(translationX: 0, y: 250)
         }) { (finished) in
-            for i in 0..<self.chooseView.subviews.count {
-                self.chooseView.subviews[i].removeFromSuperview()
-            }
+            self.deleteAllChooseView()
+        }
+    }
+    
+    func deleteAllChooseView() {
+        for i in 0..<self.chooseView.subviews.count {
+            self.chooseView.subviews[i].removeFromSuperview()
         }
     }
     
     // MARK: - View configs
     
     func viewConfigs() {
-        navigationItem.title = "ثبت تراکنش"
+        if getting {
+            navigationItem.title = "ثبت تراکنش دریافت"
+        } else {
+            navigationItem.title = "ثبت تراکنش پرداخت"
+        }
+        if edit {
+            navigationItem.title = "ویرایش تراکنش"
+        }
         
         let saveButton = UIBarButtonItem(title: "ذخیره", style: .done, target: self, action: #selector(save))
         navigationItem.rightBarButtonItem = saveButton
+        
+        if getting {
+            tagView.removeFromSuperview()
+        }
     }
     
     func save() {
@@ -102,21 +201,38 @@ class AddTransactionViewController: UIViewController {
             
             transaction.title = title
             transaction.accID = selectedAcc?.accID ?? "0"
-            transaction.date = NSDate()
             
             if valueField.text != "" {
-                transaction.value = Float(valueField.text!)!
+                let val = Float(valueField.text!)!
+                if getting {
+                    transaction.value = val
+                } else {
+                    transaction.value = -(val)
+                }
             } else {
                 transaction.value = 0
             }
             
-            if selectedTag != nil {
+            if selectedTag?.title != nil {
                 transaction.tagName = selectedTag?.title
             } else {
-                transaction.tagName = "بدون برچسب"
+                if getting {
+                    transaction.tagName = "دریافت"
+                } else {
+                    transaction.tagName = "بدون برچسب"
+                }
             }
             
-            context.insert(transaction)
+            if edit {
+                transaction.date = self.transaction?.date
+                let nav = self.parent as! UINavigationController
+                let parent = nav.childViewControllers.first as! TransactionTableViewController
+                parent.transactions.remove(at: index)
+                parent.transactions.insert(transaction, at: index)
+            } else {
+                transaction.date = NSDate()
+                context.insert(transaction)
+            }
             
             do {
                 try context.save()

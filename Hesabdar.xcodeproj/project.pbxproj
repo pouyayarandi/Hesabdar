@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		921B994D1F409A8F009EA892 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B994B1F409A8F009EA892 /* AddTransactionViewController.swift */; };
 		921B994E1F409A8F009EA892 /* AddTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921B994C1F409A8F009EA892 /* AddTransactionViewController.xib */; };
+		922A6C9D1F42D65C00817888 /* AccountDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A6C9B1F42D65C00817888 /* AccountDetailTableViewController.swift */; };
+		922A6C9E1F42D65C00817888 /* AccountDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922A6C9C1F42D65C00817888 /* AccountDetailTableViewController.xib */; };
+		922A6CA31F42E09200817888 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A6CA11F42E09200817888 /* TransactionDetailViewController.swift */; };
+		922A6CA41F42E09200817888 /* TransactionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922A6CA21F42E09200817888 /* TransactionDetailViewController.xib */; };
 		927DF3211F40479900CE97E7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DF3201F40479900CE97E7 /* Color.swift */; };
 		927DF3241F40500F00CE97E7 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DF3221F40500F00CE97E7 /* AddAccountViewController.swift */; };
 		927DF3251F40500F00CE97E7 /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927DF3231F40500F00CE97E7 /* AddAccountViewController.xib */; };
@@ -63,6 +67,10 @@
 /* Begin PBXFileReference section */
 		921B994B1F409A8F009EA892 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		921B994C1F409A8F009EA892 /* AddTransactionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTransactionViewController.xib; sourceTree = "<group>"; };
+		922A6C9B1F42D65C00817888 /* AccountDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailTableViewController.swift; sourceTree = "<group>"; };
+		922A6C9C1F42D65C00817888 /* AccountDetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountDetailTableViewController.xib; sourceTree = "<group>"; };
+		922A6CA11F42E09200817888 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		922A6CA21F42E09200817888 /* TransactionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionDetailViewController.xib; sourceTree = "<group>"; };
 		927DF3201F40479900CE97E7 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		927DF3221F40500F00CE97E7 /* AddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		927DF3231F40500F00CE97E7 /* AddAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
@@ -214,11 +222,13 @@
 				929CFFFE1F3F88A0005BBC2E /* TransactionTableViewCell.swift */,
 				92F21B641F40315100C81DAA /* AccountTableViewController.swift */,
 				92F21B681F40317D00C81DAA /* AccountTableViewCell.swift */,
-				927DF3221F40500F00CE97E7 /* AddAccountViewController.swift */,
-				921B994B1F409A8F009EA892 /* AddTransactionViewController.swift */,
 				92E818701F40DC000076FA07 /* TagTableViewController.swift */,
 				92E818741F40DC520076FA07 /* TagTableViewCell.swift */,
+				921B994B1F409A8F009EA892 /* AddTransactionViewController.swift */,
+				927DF3221F40500F00CE97E7 /* AddAccountViewController.swift */,
 				92E8187A1F40E1CF0076FA07 /* AddTagViewController.swift */,
+				922A6C9B1F42D65C00817888 /* AccountDetailTableViewController.swift */,
+				922A6CA11F42E09200817888 /* TransactionDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -235,6 +245,8 @@
 				92E818711F40DC000076FA07 /* TagTableViewController.xib */,
 				92E818751F40DC520076FA07 /* TagTableViewCell.xib */,
 				92E8187B1F40E1CF0076FA07 /* AddTagViewController.xib */,
+				922A6C9C1F42D65C00817888 /* AccountDetailTableViewController.xib */,
+				922A6CA21F42E09200817888 /* TransactionDetailViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -349,9 +361,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922A6CA41F42E09200817888 /* TransactionDetailViewController.xib in Resources */,
 				92E818801F41043C0076FA07 /* IRANSans(FaNum).ttf in Resources */,
 				927DF3251F40500F00CE97E7 /* AddAccountViewController.xib in Resources */,
 				92F21B671F40315100C81DAA /* AccountTableViewController.xib in Resources */,
+				922A6C9E1F42D65C00817888 /* AccountDetailTableViewController.xib in Resources */,
 				92E818771F40DC520076FA07 /* TagTableViewCell.xib in Resources */,
 				92F21B6B1F40317D00C81DAA /* AccountTableViewCell.xib in Resources */,
 				929CFFFD1F3F8859005BBC2E /* TransactionTableViewController.xib in Resources */,
@@ -395,7 +409,9 @@
 				929CFFEE1F3F8488005BBC2E /* Account+CoreDataClass.swift in Sources */,
 				92E818761F40DC520076FA07 /* TagTableViewCell.swift in Sources */,
 				929CFFF01F3F8488005BBC2E /* Transaction+CoreDataClass.swift in Sources */,
+				922A6CA31F42E09200817888 /* TransactionDetailViewController.swift in Sources */,
 				929CFF9C1F3F80F4005BBC2E /* AppDelegate.swift in Sources */,
+				922A6C9D1F42D65C00817888 /* AccountDetailTableViewController.swift in Sources */,
 				92E8187F1F40EA450076FA07 /* RoundedButton.swift in Sources */,
 				927DF3241F40500F00CE97E7 /* AddAccountViewController.swift in Sources */,
 				929C00001F3F88A0005BBC2E /* TransactionTableViewCell.swift in Sources */,

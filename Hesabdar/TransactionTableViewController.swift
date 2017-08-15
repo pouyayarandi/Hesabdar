@@ -113,17 +113,52 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
         let cell = Bundle.main.loadNibNamed("TransactionTableViewCell", owner: self, options: nil)?.first as! TransactionTableViewCell
         
         let transaction = transactions[indexPath.row]
+        cell.configureCell(transaction: transaction)
+        
         var tagColor = UIColor.gray
-        if transaction.tagName != "بدون برچسب" {
+        if transaction.tagName != "بدون برچسب", transaction.tagName != "دریافت" {
             tagColor = getColor(ofTag: transaction.tagName!)
         }
         let accTitle = getAccountName(withID: transaction.accID!)
         
-        cell.configureCell(transaction: transaction)
         cell.tagLabel.textColor = tagColor
-        cell.accountLabel.text = "از/به حساب " + accTitle
+        
+        if transaction.tagName == "دریافت" {
+            cell.accountLabel.text = "به حساب " + accTitle
+        } else {
+            cell.accountLabel.text = "از حساب " + accTitle
+        }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            context.delete(transactions[indexPath.row] as NSManagedObject)
+            transactions.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            do {
+                try context.save()
+            } catch let error as NSError {
+                print(error.debugDescription)
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.isEditing {
+            var getting = false
+            if transactions[indexPath.row].tagName == "دریافت" {
+                getting = true
+            }
+            let transaction = transactions[indexPath.row]
+            let edit = AddTransactionViewController(transaction: transaction, edit: true, getting: getting, index: indexPath.row)
+            self.navigationController?.pushViewController(edit, animated: true)
+        } else {
+            let detail = TransactionDetailViewController(nibName: "TransactionDetailViewController", bundle: nil)
+            self.navigationController?.pushViewController(detail, animated: true)
+        }
     }
 
     // MARK: - View configs
@@ -136,10 +171,20 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAdd))
         navigationItem.rightBarButtonItem = addButton
+        
+        let addGettingButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAddGetting))
+        navigationItem.rightBarButtonItems?.append(addGettingButton)
+        
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
     func goToAdd() {
         let add = AddTransactionViewController(nibName: "AddTransactionViewController", bundle: nil)
+        self.navigationController?.pushViewController(add, animated: true)
+    }
+    
+    func goToAddGetting() {
+        let add = AddTransactionViewController(getting: true)
         self.navigationController?.pushViewController(add, animated: true)
     }
     

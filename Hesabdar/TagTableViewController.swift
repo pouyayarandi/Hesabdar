@@ -77,6 +77,12 @@ class TagTableViewController: UITableViewController {
             context.delete(tags[indexPath.row] as NSManagedObject)
             tags.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            do {
+                try context.save()
+            } catch let error as NSError {
+                print(error.debugDescription)
+            }
         }
     }
     
@@ -98,6 +104,10 @@ class TagTableViewController: UITableViewController {
         //self.navigationController?.navigationBar.barTintColor = color.blue()
         //self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        if !onChooseWindow {
+            tableView.allowsSelection = false
+        }
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAdd))
         navigationItem.rightBarButtonItem = addButton
