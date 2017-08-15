@@ -10,6 +10,8 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
+    let format = NumberFormatter()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

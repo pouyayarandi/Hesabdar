@@ -23,6 +23,7 @@ class AddTransactionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewConfigs()
         
         if edit {
             titleField.text = transaction?.title
@@ -35,13 +36,12 @@ class AddTransactionViewController: UIViewController {
                 selectedAcc = getAccount(id: (transaction?.accID!)!)
                 accountBtn.setTitle(selectedAcc?.title, for: .normal)
             }
-            if transaction?.tagName != "بدون برچسب" {
+            if transaction?.tagName != "بدون برچسب", transaction?.tagName != "دریافت" {
                 selectedTag = getTag(title: (transaction?.tagName)!)
                 tagBtn.setTitle(selectedTag?.title, for: .normal)
             }
         }
         
-        viewConfigs()
         chooseStack.transform = CGAffineTransform(translationX: 0, y: 250)
     }
 
@@ -190,46 +190,71 @@ class AddTransactionViewController: UIViewController {
         
         if getting {
             tagView.removeFromSuperview()
+            accountBtn.setTitle("به حساب", for: .normal)
         }
     }
     
     func save() {
         if let title = titleField.text, title != "" {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let entity = NSEntityDescription.entity(forEntityName: "Transaction", in: context)
-            let transaction = Transaction(entity: entity!, insertInto: context)
-            
-            transaction.title = title
-            transaction.accID = selectedAcc?.accID ?? "0"
-            
-            if valueField.text != "" {
-                let val = Float(valueField.text!)!
-                if getting {
-                    transaction.value = val
-                } else {
-                    transaction.value = -(val)
-                }
-            } else {
-                transaction.value = 0
-            }
-            
-            if selectedTag?.title != nil {
-                transaction.tagName = selectedTag?.title
-            } else {
-                if getting {
-                    transaction.tagName = "دریافت"
-                } else {
-                    transaction.tagName = "بدون برچسب"
-                }
-            }
-            
             if edit {
-                transaction.date = self.transaction?.date
+                
+                transaction?.title = title
+                transaction?.accID = selectedAcc?.accID ?? "0"
+                
+                if valueField.text != "" {
+                    let val = Float(valueField.text!)!
+                    if getting {
+                        transaction?.value = val
+                    } else {
+                        transaction?.value = -(val)
+                    }
+                } else {
+                    transaction?.value = 0
+                }
+                
+                if selectedTag?.title != nil {
+                    transaction?.tagName = selectedTag?.title
+                } else {
+                    if getting {
+                        transaction?.tagName = "دریافت"
+                    } else {
+                        transaction?.tagName = "بدون برچسب"
+                    }
+                }
+                
+                transaction?.date = self.transaction?.date
                 let nav = self.parent as! UINavigationController
                 let parent = nav.childViewControllers.first as! TransactionTableViewController
                 parent.transactions.remove(at: index)
-                parent.transactions.insert(transaction, at: index)
+                parent.transactions.insert(transaction!, at: index)
             } else {
+                let entity = NSEntityDescription.entity(forEntityName: "Transaction", in: context)
+                let transaction = Transaction(entity: entity!, insertInto: context)
+                
+                transaction.title = title
+                transaction.accID = selectedAcc?.accID ?? "0"
+                
+                if valueField.text != "" {
+                    let val = Float(valueField.text!)!
+                    if getting {
+                        transaction.value = val
+                    } else {
+                        transaction.value = -(val)
+                    }
+                } else {
+                    transaction.value = 0
+                }
+                
+                if selectedTag?.title != nil {
+                    transaction.tagName = selectedTag?.title
+                } else {
+                    if getting {
+                        transaction.tagName = "دریافت"
+                    } else {
+                        transaction.tagName = "بدون برچسب"
+                    }
+                }
                 transaction.date = NSDate()
                 context.insert(transaction)
             }

@@ -156,7 +156,7 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
             let edit = AddTransactionViewController(transaction: transaction, edit: true, getting: getting, index: indexPath.row)
             self.navigationController?.pushViewController(edit, animated: true)
         } else {
-            let detail = TransactionDetailViewController(nibName: "TransactionDetailViewController", bundle: nil)
+            let detail = TransactionDetailViewController(transaction: transactions[indexPath.row])
             self.navigationController?.pushViewController(detail, animated: true)
         }
     }
