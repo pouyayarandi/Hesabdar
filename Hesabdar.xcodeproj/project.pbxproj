@@ -13,6 +13,8 @@
 		922A6C9E1F42D65C00817888 /* AccountDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922A6C9C1F42D65C00817888 /* AccountDetailTableViewController.xib */; };
 		922A6CA31F42E09200817888 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A6CA11F42E09200817888 /* TransactionDetailViewController.swift */; };
 		922A6CA41F42E09200817888 /* TransactionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922A6CA21F42E09200817888 /* TransactionDetailViewController.xib */; };
+		925470A01F44202B002AA581 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9254709E1F44202B002AA581 /* HomeViewController.swift */; };
+		925470A11F44202B002AA581 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9254709F1F44202B002AA581 /* HomeViewController.xib */; };
 		927DF3211F40479900CE97E7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DF3201F40479900CE97E7 /* Color.swift */; };
 		927DF3241F40500F00CE97E7 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927DF3221F40500F00CE97E7 /* AddAccountViewController.swift */; };
 		927DF3251F40500F00CE97E7 /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927DF3231F40500F00CE97E7 /* AddAccountViewController.xib */; };
@@ -45,6 +47,7 @@
 		92F21B671F40315100C81DAA /* AccountTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92F21B651F40315100C81DAA /* AccountTableViewController.xib */; };
 		92F21B6A1F40317D00C81DAA /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F21B681F40317D00C81DAA /* AccountTableViewCell.swift */; };
 		92F21B6B1F40317D00C81DAA /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92F21B691F40317D00C81DAA /* AccountTableViewCell.xib */; };
+		B33E896B53C01027034343C0 /* Pods_Hesabdar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095BB183AC57C5618CD0219A /* Pods_Hesabdar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,12 +68,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		095BB183AC57C5618CD0219A /* Pods_Hesabdar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hesabdar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		921B994B1F409A8F009EA892 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		921B994C1F409A8F009EA892 /* AddTransactionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTransactionViewController.xib; sourceTree = "<group>"; };
 		922A6C9B1F42D65C00817888 /* AccountDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailTableViewController.swift; sourceTree = "<group>"; };
 		922A6C9C1F42D65C00817888 /* AccountDetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountDetailTableViewController.xib; sourceTree = "<group>"; };
 		922A6CA11F42E09200817888 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 		922A6CA21F42E09200817888 /* TransactionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionDetailViewController.xib; sourceTree = "<group>"; };
+		9254709E1F44202B002AA581 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9254709F1F44202B002AA581 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		927DF3201F40479900CE97E7 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		927DF3221F40500F00CE97E7 /* AddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		927DF3231F40500F00CE97E7 /* AddAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
@@ -109,6 +115,8 @@
 		92F21B651F40315100C81DAA /* AccountTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewController.xib; sourceTree = "<group>"; };
 		92F21B681F40317D00C81DAA /* AccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		92F21B691F40317D00C81DAA /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		9C0AC6F3C322EC4C77A83C05 /* Pods-Hesabdar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hesabdar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hesabdar/Pods-Hesabdar.debug.xcconfig"; sourceTree = "<group>"; };
+		F83C4DA07F426D16A2968A68 /* Pods-Hesabdar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hesabdar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hesabdar/Pods-Hesabdar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33E896B53C01027034343C0 /* Pods_Hesabdar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +145,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58BA28DEAF28124F3D19CB4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				095BB183AC57C5618CD0219A /* Pods_Hesabdar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		929CFF8F1F3F80F4005BBC2E = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +161,8 @@
 				929CFFBD1F3F80F5005BBC2E /* HesabdarUITests */,
 				929CFF991F3F80F4005BBC2E /* Products */,
 				929CFFF71F3F8786005BBC2E /* Font */,
+				EF58D1AB3DB3D72ED5077267 /* Pods */,
+				58BA28DEAF28124F3D19CB4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,6 +248,7 @@
 				92E8187A1F40E1CF0076FA07 /* AddTagViewController.swift */,
 				922A6C9B1F42D65C00817888 /* AccountDetailTableViewController.swift */,
 				922A6CA11F42E09200817888 /* TransactionDetailViewController.swift */,
+				9254709E1F44202B002AA581 /* HomeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,8 +267,18 @@
 				92E8187B1F40E1CF0076FA07 /* AddTagViewController.xib */,
 				922A6C9C1F42D65C00817888 /* AccountDetailTableViewController.xib */,
 				922A6CA21F42E09200817888 /* TransactionDetailViewController.xib */,
+				9254709F1F44202B002AA581 /* HomeViewController.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		EF58D1AB3DB3D72ED5077267 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C0AC6F3C322EC4C77A83C05 /* Pods-Hesabdar.debug.xcconfig */,
+				F83C4DA07F426D16A2968A68 /* Pods-Hesabdar.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 929CFFC31F3F80F5005BBC2E /* Build configuration list for PBXNativeTarget "Hesabdar" */;
 			buildPhases = (
+				B1001437406430D2256A539F /* [CP] Check Pods Manifest.lock */,
 				929CFF941F3F80F4005BBC2E /* Sources */,
 				929CFF951F3F80F4005BBC2E /* Frameworks */,
 				929CFF961F3F80F4005BBC2E /* Resources */,
+				89124C97DEE8D845435CB9CA /* [CP] Embed Pods Frameworks */,
+				1E3D907C739FC5C301720574 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -363,6 +396,7 @@
 			files = (
 				922A6CA41F42E09200817888 /* TransactionDetailViewController.xib in Resources */,
 				92E818801F41043C0076FA07 /* IRANSans(FaNum).ttf in Resources */,
+				925470A11F44202B002AA581 /* HomeViewController.xib in Resources */,
 				927DF3251F40500F00CE97E7 /* AddAccountViewController.xib in Resources */,
 				92F21B671F40315100C81DAA /* AccountTableViewController.xib in Resources */,
 				922A6C9E1F42D65C00817888 /* AccountDetailTableViewController.xib in Resources */,
@@ -394,6 +428,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E3D907C739FC5C301720574 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hesabdar/Pods-Hesabdar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89124C97DEE8D845435CB9CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hesabdar/Pods-Hesabdar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1001437406430D2256A539F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		929CFF941F3F80F4005BBC2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -405,6 +487,7 @@
 				929CFFA41F3F80F4005BBC2E /* Hesabdar.xcdatamodeld in Sources */,
 				92F21B661F40315100C81DAA /* AccountTableViewController.swift in Sources */,
 				927DF3211F40479900CE97E7 /* Color.swift in Sources */,
+				925470A01F44202B002AA581 /* HomeViewController.swift in Sources */,
 				92E8187C1F40E1CF0076FA07 /* AddTagViewController.swift in Sources */,
 				929CFFEE1F3F8488005BBC2E /* Account+CoreDataClass.swift in Sources */,
 				92E818761F40DC520076FA07 /* TagTableViewCell.swift in Sources */,
@@ -564,6 +647,7 @@
 		};
 		929CFFC41F3F80F5005BBC2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C0AC6F3C322EC4C77A83C05 /* Pods-Hesabdar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z5GH44G8KH;
@@ -577,6 +661,7 @@
 		};
 		929CFFC51F3F80F5005BBC2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F83C4DA07F426D16A2968A68 /* Pods-Hesabdar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z5GH44G8KH;

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSans(FaNum).ttf">
+            <string>IRANSansFaNum</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Hesabdar" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="375" height="821"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubY-0K-Msu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="821"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcs-uD-TfG">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="821"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8d-Uj-KMA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IR-eO-8RZ" customClass="KDCircularProgress">
+                                            <rect key="frame" x="82" y="32" width="210" height="210"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="210" id="18f-Yb-N16"/>
+                                                <constraint firstAttribute="width" secondItem="0IR-eO-8RZ" secondAttribute="height" multiplier="1:1" id="tLH-VS-uqR"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                                    <real key="value" value="90"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-Ug-Vl9">
+                                            <rect key="frame" x="154" y="110" width="68.5" height="56.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بودجه ی شما" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcb-Ny-xea">
+                                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CH-Nl-vHS">
+                                                    <rect key="frame" x="0.0" y="27.5" width="68.5" height="29"/>
+                                                    <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.49402668030000002" blue="0.85257448189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="5yc-Ug-Vl9" firstAttribute="centerX" secondItem="t8d-Uj-KMA" secondAttribute="centerX" id="WuF-90-Oyr"/>
+                                        <constraint firstItem="0IR-eO-8RZ" firstAttribute="centerY" secondItem="t8d-Uj-KMA" secondAttribute="centerY" id="eiv-wT-oDi"/>
+                                        <constraint firstAttribute="height" constant="275" id="fLP-Ul-E6s"/>
+                                        <constraint firstItem="5yc-Ug-Vl9" firstAttribute="centerY" secondItem="t8d-Uj-KMA" secondAttribute="centerY" id="iHK-kN-nea"/>
+                                        <constraint firstItem="0IR-eO-8RZ" firstAttribute="centerX" secondItem="t8d-Uj-KMA" secondAttribute="centerX" id="xpG-RB-i5w"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpj-zF-q2Z">
+                                    <rect key="frame" x="0.0" y="275" width="375" height="183"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GzT-7b-HqI">
+                                            <rect key="frame" x="18" y="18" width="339" height="147"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jul-RE-RbN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="339" height="25.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yW-XV-1gB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="164.5" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مجموع دریافت ها" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9R-Wa-aKH">
+                                                            <rect key="frame" x="174.5" y="0.0" width="164.5" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                                            <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="57Z-c7-DSt">
+                                                    <rect key="frame" x="0.0" y="40.5" width="339" height="25.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glK-KA-5c4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="164.5" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مجموع پرداخت ها" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYx-Jd-1Sr">
+                                                            <rect key="frame" x="174.5" y="0.0" width="164.5" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                                            <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aQm-rC-Iqo">
+                                                    <rect key="frame" x="0.0" y="81" width="339" height="25.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb8-kf-PR2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="39.5" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مجموع دریافت های این ماه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L7-Tz-WHw">
+                                                            <rect key="frame" x="172" y="0.0" width="167" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                                            <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rL8-fg-OPI">
+                                                    <rect key="frame" x="0.0" y="121.5" width="339" height="25.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8P-EI-DTL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="39.5" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مجموع پرداخت های این ماه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRU-Q8-9WI">
+                                                            <rect key="frame" x="168" y="0.0" width="171" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                                            <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="57Z-c7-DSt" secondAttribute="trailing" id="0GB-qg-g0F"/>
+                                                <constraint firstItem="rL8-fg-OPI" firstAttribute="leading" secondItem="GzT-7b-HqI" secondAttribute="leading" id="2Be-hl-wul"/>
+                                                <constraint firstItem="aQm-rC-Iqo" firstAttribute="leading" secondItem="GzT-7b-HqI" secondAttribute="leading" id="3BD-8z-blj"/>
+                                                <constraint firstItem="jul-RE-RbN" firstAttribute="leading" secondItem="GzT-7b-HqI" secondAttribute="leading" id="4r5-yO-khU"/>
+                                                <constraint firstItem="57Z-c7-DSt" firstAttribute="leading" secondItem="GzT-7b-HqI" secondAttribute="leading" id="HN0-v2-Oxx"/>
+                                                <constraint firstAttribute="trailing" secondItem="rL8-fg-OPI" secondAttribute="trailing" id="aMY-UM-bjq"/>
+                                                <constraint firstAttribute="trailing" secondItem="aQm-rC-Iqo" secondAttribute="trailing" id="ccM-H9-2aA"/>
+                                                <constraint firstAttribute="trailing" secondItem="jul-RE-RbN" secondAttribute="trailing" id="dL3-q6-1c0"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="GzT-7b-HqI" secondAttribute="bottom" constant="10" id="8Jp-uh-mcF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="GzT-7b-HqI" secondAttribute="trailing" constant="10" id="AVt-Bf-7yc"/>
+                                        <constraint firstItem="GzT-7b-HqI" firstAttribute="leading" secondItem="Dpj-zF-q2Z" secondAttribute="leadingMargin" constant="10" id="AlO-kH-6TJ"/>
+                                        <constraint firstItem="GzT-7b-HqI" firstAttribute="top" secondItem="Dpj-zF-q2Z" secondAttribute="topMargin" constant="10" id="MYf-JC-uQk"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Dpj-zF-q2Z" secondAttribute="trailing" id="3Gv-Kd-Xkf"/>
+                                <constraint firstItem="Dpj-zF-q2Z" firstAttribute="leading" secondItem="pcs-uD-TfG" secondAttribute="leading" id="7G8-wI-mxN"/>
+                                <constraint firstAttribute="trailing" secondItem="t8d-Uj-KMA" secondAttribute="trailing" id="7Y8-Qz-5I7"/>
+                                <constraint firstItem="Dpj-zF-q2Z" firstAttribute="top" secondItem="t8d-Uj-KMA" secondAttribute="bottom" id="ApP-hS-920"/>
+                                <constraint firstItem="t8d-Uj-KMA" firstAttribute="leading" secondItem="pcs-uD-TfG" secondAttribute="leading" id="Zuj-Ra-tAg"/>
+                                <constraint firstItem="t8d-Uj-KMA" firstAttribute="top" secondItem="pcs-uD-TfG" secondAttribute="top" id="tYT-4o-xAm"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="pcs-uD-TfG" secondAttribute="trailing" id="I0F-J6-AXH"/>
+                        <constraint firstItem="pcs-uD-TfG" firstAttribute="centerX" secondItem="ubY-0K-Msu" secondAttribute="centerX" id="Nss-U9-tEh"/>
+                        <constraint firstItem="pcs-uD-TfG" firstAttribute="leading" secondItem="ubY-0K-Msu" secondAttribute="leading" id="YPZ-0u-KeR"/>
+                        <constraint firstAttribute="bottom" secondItem="pcs-uD-TfG" secondAttribute="bottom" id="kYY-wF-hFJ"/>
+                        <constraint firstItem="pcs-uD-TfG" firstAttribute="height" secondItem="ubY-0K-Msu" secondAttribute="height" id="wrR-Un-LtG"/>
+                        <constraint firstItem="pcs-uD-TfG" firstAttribute="top" secondItem="ubY-0K-Msu" secondAttribute="top" id="yMz-Xm-N0W"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ubY-0K-Msu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wao-sy-cIC"/>
+                <constraint firstItem="ubY-0K-Msu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XjU-As-6YI"/>
+                <constraint firstAttribute="bottom" secondItem="ubY-0K-Msu" secondAttribute="bottom" id="vo2-Va-3CM"/>
+                <constraint firstAttribute="trailing" secondItem="ubY-0K-Msu" secondAttribute="trailing" id="xDJ-k1-1cL"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="34.5" y="163.5"/>
+        </view>
+    </objects>
+</document>

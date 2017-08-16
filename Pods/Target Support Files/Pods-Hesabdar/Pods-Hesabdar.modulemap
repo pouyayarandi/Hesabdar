@@ -1,0 +1,6 @@
+framework module Pods_Hesabdar {
+  umbrella header "Pods-Hesabdar-umbrella.h"
+
+  export *
+  module * { export * }
+}

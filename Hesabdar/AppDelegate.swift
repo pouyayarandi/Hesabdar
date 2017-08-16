@@ -22,20 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let transTable = TransactionTableViewController(nibName: "TransactionTableViewController", bundle: nil)
         let accountTable = AccountTableViewController(nibName: "AccountTableViewController", bundle: nil)
         let tagTable = TagTableViewController(nibName: "TagTableViewController", bundle: nil)
+        let home = HomeViewController(nibName: "HomeViewController", bundle: nil)
         
         let nav1 = UINavigationController()
         let nav2 = UINavigationController()
         let nav3 = UINavigationController()
+        let nav4 = UINavigationController()
         
         nav1.viewControllers = [transTable]
         nav2.viewControllers = [accountTable]
         nav3.viewControllers = [tagTable]
+        nav4.viewControllers = [home]
         
         let bar = UITabBarController()
         bar.tabBar.isTranslucent = false
-        bar.viewControllers = [nav1, nav2, nav3]
+        bar.viewControllers = [nav1, nav2, nav3, nav4]
         bar.tabBar.items?[0].title = "تراکنش ها"
         bar.tabBar.items?[1].title = "حساب ها"
+        bar.tabBar.items?[3].title = "خانه"
         
         window?.rootViewController = bar
         window?.makeKeyAndVisible()
