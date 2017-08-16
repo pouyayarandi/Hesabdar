@@ -3,5 +3,5 @@
 use_frameworks!
 
 target 'Hesabdar' do
-	pod 'KDCircularProgress’
+	pod 'KDCircularProgress', '~> 1.5.2’
 end
