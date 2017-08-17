@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let bar = UITabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -21,30 +22,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let transTable = TransactionTableViewController(nibName: "TransactionTableViewController", bundle: nil)
         let accountTable = AccountTableViewController(nibName: "AccountTableViewController", bundle: nil)
-        let tagTable = TagTableViewController(nibName: "TagTableViewController", bundle: nil)
         let home = HomeViewController(nibName: "HomeViewController", bundle: nil)
         
         let nav1 = UINavigationController()
         let nav2 = UINavigationController()
         let nav3 = UINavigationController()
-        let nav4 = UINavigationController()
         
         nav1.viewControllers = [transTable]
         nav2.viewControllers = [accountTable]
-        nav3.viewControllers = [tagTable]
-        nav4.viewControllers = [home]
+        nav3.viewControllers = [home]
         
-        let bar = UITabBarController()
         bar.tabBar.isTranslucent = false
-        bar.viewControllers = [nav1, nav2, nav3, nav4]
+        bar.viewControllers = [nav1, nav3, nav2]
         bar.tabBar.items?[0].title = "تراکنش ها"
-        bar.tabBar.items?[1].title = "حساب ها"
-        bar.tabBar.items?[3].title = "خانه"
+        bar.tabBar.items?[2].title = "حساب ها"
+        
+        goToHome()
+        
+        let size: CGFloat = 55
+        let button = UIButton(type: .custom)
+        let point = bar.tabBar.center
+        button.frame = CGRect(x: point.x - size/2, y: point.y - size/2 + 10, width: size, height: size)
+        button.layer.cornerRadius = size/2
+        button.clipsToBounds = true
+        //button.layer.borderWidth = 0.5
+        //button.layer.borderColor = UIColor.gray.cgColor
+        button.backgroundColor = UIColor(red: 0, green: 192/255, blue: 0, alpha: 1)
+        button.setImage(#imageLiteral(resourceName: "home"), for: .normal)
+        bar.view.addSubview(button)
+        button.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
+        // config button shadow
+        button.layer.shadowColor = UIColor.gray.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 0)
+        button.layer.shadowRadius = 5
+        button.layer.shadowOpacity = 0.7
+        button.layer.masksToBounds = false
         
         window?.rootViewController = bar
         window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    func goToHome() {
+        bar.selectedIndex = 1
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

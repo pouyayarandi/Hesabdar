@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KDCircularProgress.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2B75C6A36F07783E9F75519445409E5B</key>
+		<key>322428ECC8C5EC71F14C92233787C7AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>322428ECC8C5EC71F14C92233787C7AC</key>
+		<key>4D2B2DC86875E3DBA35284765381A575</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F307B842FF76B2DE6C55DB67C0885325</key>
 		<dict>
 			<key>primary</key>
 			<true/>

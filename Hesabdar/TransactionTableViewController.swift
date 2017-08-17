@@ -169,6 +169,8 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         
+        tableView.contentInset.bottom = 30
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAdd))
         navigationItem.rightBarButtonItem = addButton
         

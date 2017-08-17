@@ -24,25 +24,26 @@
                 <outlet property="gettingMonthLabel" destination="9CE-op-mwT" id="uZ6-aU-LYu"/>
                 <outlet property="givingLabel" destination="4BB-4W-gmX" id="LTV-pP-xsy"/>
                 <outlet property="givingMonthLabel" destination="Tqf-hb-jew" id="AQh-Gf-0Dg"/>
+                <outlet property="pieChart" destination="UvB-xe-fyO" id="az6-xs-87O"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="820"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="840"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W18-qg-mZk">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="820"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="840"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0y-qp-Hc0">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="820"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="840"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIq-YR-PP9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SKx-rF-T93">
-                                            <rect key="frame" x="153" y="108" width="68.5" height="58.5"/>
+                                            <rect key="frame" x="153" y="95.5" width="68.5" height="58.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بودجه ی شما" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-U8-aLb">
                                                     <rect key="frame" x="0.0" y="0.0" width="68.5" height="22.5"/>
@@ -59,9 +60,9 @@
                                             </subviews>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6w-KA-xi6" customClass="KDCircularProgress" customModule="KDCircularProgress">
-                                            <rect key="frame" x="88" y="39" width="199" height="196"/>
+                                            <rect key="frame" x="82.5" y="21" width="210" height="207"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="199" id="38t-Ti-e9c"/>
+                                                <constraint firstAttribute="width" constant="210" id="38t-Ti-e9c"/>
                                                 <constraint firstAttribute="width" secondItem="b6w-KA-xi6" secondAttribute="height" multiplier="1:1" constant="3" id="DCO-7j-ftk"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -69,7 +70,7 @@
                                                     <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="angle">
-                                                    <real key="value" value="0.0"/>
+                                                    <real key="value" value="90"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
                                                     <real key="value" value="-90"/>
@@ -91,14 +92,14 @@
                                     <color key="backgroundColor" red="0.0" green="0.49402668030000002" blue="0.85257448189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="b6w-KA-xi6" firstAttribute="centerX" secondItem="hIq-YR-PP9" secondAttribute="centerX" id="C5P-Zz-zK6"/>
-                                        <constraint firstAttribute="height" constant="275" id="GHA-os-Gg0"/>
+                                        <constraint firstAttribute="height" constant="250" id="GHA-os-Gg0"/>
                                         <constraint firstItem="SKx-rF-T93" firstAttribute="centerX" secondItem="hIq-YR-PP9" secondAttribute="centerX" id="Mh4-RZ-sYC"/>
                                         <constraint firstItem="SKx-rF-T93" firstAttribute="centerY" secondItem="hIq-YR-PP9" secondAttribute="centerY" id="hrr-uJ-6bR"/>
                                         <constraint firstItem="b6w-KA-xi6" firstAttribute="centerY" secondItem="hIq-YR-PP9" secondAttribute="centerY" id="qmn-pa-qDU"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqt-q3-AGo">
-                                    <rect key="frame" x="0.0" y="275" width="375" height="183"/>
+                                    <rect key="frame" x="0.0" y="250" width="375" height="183"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="emq-vY-OEa">
                                             <rect key="frame" x="18" y="18" width="339" height="147"/>
@@ -192,15 +193,45 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="emq-vY-OEa" secondAttribute="trailing" constant="10" id="jVt-ap-uGs"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvB-xe-fyO" customClass="PieChartView" customModule="Charts">
+                                    <rect key="frame" x="8" y="441" width="359" height="260"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="260" id="Dml-bT-dcu"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="آخرین تراکنش" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="565-xM-Mfl">
+                                    <rect key="frame" x="8" y="709" width="359" height="25.5"/>
+                                    <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                                    <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BfR-OS-FnV">
+                                    <rect key="frame" x="0.0" y="742" width="375" height="90"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="90" id="wqe-UZ-AB2"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="UvB-xe-fyO" secondAttribute="trailing" constant="8" id="CN6-LM-Kl0"/>
+                                <constraint firstItem="BfR-OS-FnV" firstAttribute="leading" secondItem="g0y-qp-Hc0" secondAttribute="leading" id="GNy-YR-Dyn"/>
+                                <constraint firstItem="565-xM-Mfl" firstAttribute="top" secondItem="UvB-xe-fyO" secondAttribute="bottom" constant="8" id="Hj6-yx-C8o"/>
+                                <constraint firstItem="565-xM-Mfl" firstAttribute="leading" secondItem="g0y-qp-Hc0" secondAttribute="leading" constant="8" id="MzY-sD-R5c"/>
+                                <constraint firstAttribute="trailing" secondItem="BfR-OS-FnV" secondAttribute="trailing" id="Nkb-Eg-MeT"/>
+                                <constraint firstAttribute="trailing" secondItem="BfR-OS-FnV" secondAttribute="trailing" id="OIf-EL-Pq2"/>
                                 <constraint firstAttribute="trailing" secondItem="hIq-YR-PP9" secondAttribute="trailing" id="SRU-JZ-wgW"/>
+                                <constraint firstAttribute="bottom" secondItem="BfR-OS-FnV" secondAttribute="bottom" constant="8" id="VKr-lo-Nyy"/>
                                 <constraint firstItem="hIq-YR-PP9" firstAttribute="top" secondItem="g0y-qp-Hc0" secondAttribute="top" id="W2O-Xi-Yoi"/>
+                                <constraint firstItem="BfR-OS-FnV" firstAttribute="top" secondItem="565-xM-Mfl" secondAttribute="bottom" constant="8" id="WNP-tT-q50"/>
                                 <constraint firstItem="hIq-YR-PP9" firstAttribute="leading" secondItem="g0y-qp-Hc0" secondAttribute="leading" id="doP-aX-HEd"/>
                                 <constraint firstItem="uqt-q3-AGo" firstAttribute="leading" secondItem="g0y-qp-Hc0" secondAttribute="leading" id="fON-2W-Ujc"/>
-                                <constraint firstAttribute="height" constant="820" id="hHJ-Wj-cGN"/>
+                                <constraint firstAttribute="height" constant="840" id="hHJ-Wj-cGN"/>
+                                <constraint firstAttribute="trailing" secondItem="565-xM-Mfl" secondAttribute="trailing" constant="8" id="jCh-sb-Gnb"/>
+                                <constraint firstItem="UvB-xe-fyO" firstAttribute="top" secondItem="uqt-q3-AGo" secondAttribute="bottom" constant="8" id="lLQ-hs-g5p"/>
                                 <constraint firstItem="uqt-q3-AGo" firstAttribute="top" secondItem="hIq-YR-PP9" secondAttribute="bottom" id="lLv-XI-UGg"/>
+                                <constraint firstItem="UvB-xe-fyO" firstAttribute="leading" secondItem="g0y-qp-Hc0" secondAttribute="leading" constant="8" id="um3-yO-csl"/>
+                                <constraint firstItem="BfR-OS-FnV" firstAttribute="leading" secondItem="g0y-qp-Hc0" secondAttribute="leading" id="vju-eH-Bl5"/>
                                 <constraint firstAttribute="trailing" secondItem="uqt-q3-AGo" secondAttribute="trailing" id="y7Y-0A-qXf"/>
                             </constraints>
                         </view>
@@ -222,7 +253,7 @@
                 <constraint firstAttribute="bottom" secondItem="W18-qg-mZk" secondAttribute="bottom" id="xiE-Mj-iyh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="82.5" y="-248"/>
+            <point key="canvasLocation" x="82.5" y="-238"/>
         </view>
     </objects>
 </document>

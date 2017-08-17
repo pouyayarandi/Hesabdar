@@ -1,12 +1,17 @@
 PODS:
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
   - KDCircularProgress (1.5.2)
 
 DEPENDENCIES:
+  - Charts
   - KDCircularProgress (~> 1.5.2)
 
 SPEC CHECKSUMS:
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
 
-PODFILE CHECKSUM: 929d913fd835769b97ded167d9d3c5e4d473654d
+PODFILE CHECKSUM: c04d0c31a331fa44b838bdfc42cc9f7450e51f92
 
 COCOAPODS: 1.1.1

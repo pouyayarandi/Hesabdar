@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import KDCircularProgress
+import Charts
 
 struct TagWithValue {
     var tag: Tag
@@ -46,6 +47,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var circularProgress: KDCircularProgress!
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var givingLabel: UILabel!
@@ -63,6 +65,30 @@ class HomeViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Charts
+    
+    func setDataCount() {
+        setAndFetchTags()
+        setTagsWithValue()
+        var values = [PieChartDataEntry]()
+        for tag in tagsWithValue {
+            values.append(PieChartDataEntry(value: Double(tag.value), label: tag.tag.title))
+        }
+        let dataSet = PieChartDataSet(values: values, label: "")
+        dataSet.sliceSpace = 2
+        dataSet.colors.removeAll()
+        for tag in tagsWithValue {
+            dataSet.colors.append(tag.tag.getColor() as NSUIColor)
+        }
+        let percent = NumberFormatter()
+        percent.numberStyle = .percent
+        percent.maximumFractionDigits = 1
+        let data = PieChartData(dataSet: dataSet)
+        data.setValueFormatter(DefaultValueFormatter(formatter: percent))
+        pieChart.data = data
+        pieChart.animate(xAxisDuration: 0.5)
+    }
+    
     // MARK: - Config view
     
     func viewConfigs() {
@@ -70,6 +96,19 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = color.blue()
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        let tagBtn = UIBarButtonItem(title: "برچسب ها", style: .plain, target: self, action: #selector(openTags))
+        navigationItem.leftBarButtonItem = tagBtn
+        
+        pieChart.legend.form = .circle
+        pieChart.legend.xEntrySpace = 20
+        pieChart.chartDescription?.text = ""
+        pieChart.drawEntryLabelsEnabled = !pieChart.drawEntryLabelsEnabled
+    }
+    
+    func openTags() {
+        let tagView = TagTableViewController(nibName: "TagTableViewController", bundle: nil)
+        self.navigationController?.pushViewController(tagView, animated: true)
     }
     
     func setValuesBefore() {
@@ -91,6 +130,7 @@ class HomeViewController: UIViewController {
             angle = Int(Double(Double(getSumGivings())/Double(getSumGettings())) * 360)
         }
         circularProgress.animate(toAngle: Double(angle), duration: 0.5, completion: nil)
+        setDataCount()
     }
     
     // MARK: - Fetch data
@@ -211,9 +251,19 @@ class HomeViewController: UIViewController {
             }
         }
         if givings != 0 {
-            return sum/givings
+            return -(sum/givings)
         } else {
             return 0
         }
+    }
+    
+    func setTagsWithValue() {
+        var tagsWithVal = [TagWithValue]()
+        for tag in tags {
+            let val = getWithTag(title: tag.title!)
+            let tagWithVal = TagWithValue(tag: tag, value: val)
+            tagsWithVal.append(tagWithVal)
+        }
+        tagsWithValue = tagsWithVal
     }
 }
