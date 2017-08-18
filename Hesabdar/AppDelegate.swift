@@ -28,14 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav2 = UINavigationController()
         let nav3 = UINavigationController()
         
+        nav1.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 17)!, NSForegroundColorAttributeName: UIColor.white]
+        nav2.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 17)!, NSForegroundColorAttributeName: UIColor.white]
+        nav3.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 17)!, NSForegroundColorAttributeName: UIColor.white]
+        
+        let color = Color()
+        UIBarButtonItem.appearance().setTitleTextAttributes(color.font(size: 15), for: .normal)
+        
         nav1.viewControllers = [transTable]
         nav2.viewControllers = [accountTable]
         nav3.viewControllers = [home]
         
         bar.tabBar.isTranslucent = false
         bar.viewControllers = [nav1, nav3, nav2]
-        bar.tabBar.items?[0].title = "تراکنش ها"
-        bar.tabBar.items?[2].title = "حساب ها"
+        bar.tabBar.items?[0].image = UIImage(named: "transaction")
+        bar.tabBar.items?[0].selectedImage = UIImage(named: "transaction_selected")
+        bar.tabBar.items?[0].imageInsets.top = 5
+        bar.tabBar.items?[0].imageInsets.bottom = -5
+        bar.tabBar.items?[2].image = UIImage(named: "account")
+        bar.tabBar.items?[2].selectedImage = UIImage(named: "account_selected")
+        bar.tabBar.items?[2].imageInsets.top = 5
+        bar.tabBar.items?[2].imageInsets.bottom = -5
         
         goToHome()
         
@@ -58,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         button.layer.shadowOpacity = 0.7
         button.layer.masksToBounds = false
         
+        UIApplication.shared.statusBarStyle = .lightContent
         window?.rootViewController = bar
         window?.makeKeyAndVisible()
         

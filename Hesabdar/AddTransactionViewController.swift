@@ -17,6 +17,7 @@ class AddTransactionViewController: UIViewController {
     var getting = false
     var edit = false
     var index = 0
+    let color = Color()
 
     var tags = [Tag]()
     var accounts = [Account]()

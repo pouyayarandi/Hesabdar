@@ -40,6 +40,12 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
         setAndFetchTransactions()
         setAndFetchAccounts()
         tableView.reloadData()
+        
+        if transactions.isEmpty {
+            tableView.separatorStyle = .none
+        } else {
+            tableView.separatorStyle = .singleLine
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -171,10 +177,10 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
         
         tableView.contentInset.bottom = 30
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAdd))
+        let addButton = UIBarButtonItem(image: UIImage(named: "giving"), style: .plain, target: self, action: #selector(goToAdd))
         navigationItem.rightBarButtonItem = addButton
         
-        let addGettingButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAddGetting))
+        let addGettingButton = UIBarButtonItem(image: UIImage(named: "getting"), style: .plain, target: self, action: #selector(goToAddGetting))
         navigationItem.rightBarButtonItems?.append(addGettingButton)
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem

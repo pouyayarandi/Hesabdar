@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSans(FaNum).ttf">
+            <string>IRANSansFaNum</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAccountViewController" customModule="Hesabdar" customModuleProvider="target">
             <connections>
@@ -26,38 +31,38 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="عنوان حساب" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GrO-bO-bdq">
-                            <rect key="frame" x="8" y="8" width="359" height="28"/>
+                            <rect key="frame" x="16" y="8" width="343" height="28"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="GrO-bO-bdq" firstAttribute="top" secondItem="bWY-2o-owv" secondAttribute="topMargin" id="BmB-9C-key"/>
-                        <constraint firstItem="GrO-bO-bdq" firstAttribute="leading" secondItem="bWY-2o-owv" secondAttribute="leadingMargin" id="SEF-un-jkd"/>
+                        <constraint firstItem="GrO-bO-bdq" firstAttribute="leading" secondItem="bWY-2o-owv" secondAttribute="leadingMargin" constant="8" id="SEF-un-jkd"/>
                         <constraint firstAttribute="height" constant="44" id="Tno-v8-Twc"/>
-                        <constraint firstItem="GrO-bO-bdq" firstAttribute="trailing" secondItem="bWY-2o-owv" secondAttribute="trailingMargin" id="ehx-zU-vZ9"/>
+                        <constraint firstItem="GrO-bO-bdq" firstAttribute="trailing" secondItem="bWY-2o-owv" secondAttribute="trailingMargin" constant="-8" id="ehx-zU-vZ9"/>
                         <constraint firstAttribute="bottomMargin" secondItem="GrO-bO-bdq" secondAttribute="bottom" id="qf9-b9-Xge"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnj-wq-AEm">
-                    <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="65" width="375" height="44"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="شماره حساب -- با کیبورد انگلیسی وارد کنید" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DkX-lm-wDU">
-                            <rect key="frame" x="8" y="8" width="359" height="28"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="شماره حساب (با کیبورد انگلیسی وارد کنید)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DkX-lm-wDU">
+                            <rect key="frame" x="16" y="8" width="343" height="28"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="DkX-lm-wDU" firstAttribute="top" secondItem="rnj-wq-AEm" secondAttribute="topMargin" id="5r0-fJ-Q6g"/>
-                        <constraint firstItem="DkX-lm-wDU" firstAttribute="leading" secondItem="rnj-wq-AEm" secondAttribute="leadingMargin" id="Au6-n1-5kc"/>
+                        <constraint firstItem="DkX-lm-wDU" firstAttribute="leading" secondItem="rnj-wq-AEm" secondAttribute="leadingMargin" constant="8" id="Au6-n1-5kc"/>
                         <constraint firstAttribute="height" constant="44" id="RZD-Si-WaE"/>
                         <constraint firstItem="DkX-lm-wDU" firstAttribute="bottom" secondItem="rnj-wq-AEm" secondAttribute="bottomMargin" id="gYo-8Y-IUk"/>
-                        <constraint firstItem="DkX-lm-wDU" firstAttribute="trailing" secondItem="rnj-wq-AEm" secondAttribute="trailingMargin" id="ykY-dt-sPJ"/>
+                        <constraint firstItem="DkX-lm-wDU" firstAttribute="trailing" secondItem="rnj-wq-AEm" secondAttribute="trailingMargin" constant="-8" id="ykY-dt-sPJ"/>
                     </constraints>
                 </view>
             </subviews>
@@ -66,7 +71,7 @@
                 <constraint firstItem="rnj-wq-AEm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="D00-iT-isE"/>
                 <constraint firstAttribute="trailing" secondItem="bWY-2o-owv" secondAttribute="trailing" id="Hx1-ez-Iuc"/>
                 <constraint firstItem="bWY-2o-owv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XJa-5E-x8O"/>
-                <constraint firstItem="rnj-wq-AEm" firstAttribute="top" secondItem="bWY-2o-owv" secondAttribute="bottom" constant="8" id="ZIg-21-b2R"/>
+                <constraint firstItem="rnj-wq-AEm" firstAttribute="top" secondItem="bWY-2o-owv" secondAttribute="bottom" constant="1" id="ZIg-21-b2R"/>
                 <constraint firstAttribute="trailing" secondItem="rnj-wq-AEm" secondAttribute="trailing" id="ctV-Af-dES"/>
                 <constraint firstItem="bWY-2o-owv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="hl7-2v-QXg"/>
             </constraints>

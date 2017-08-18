@@ -67,6 +67,10 @@ class TagTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("TagTableViewCell", owner: self, options: nil)?.first as! TagTableViewCell
 
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+        }
+        
         let tag = tags[indexPath.row]
         cell.configCell(tag: tag)
         

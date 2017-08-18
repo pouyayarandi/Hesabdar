@@ -70,6 +70,10 @@ class AccountTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("AccountTableViewCell", owner: self, options: nil)?.first as! AccountTableViewCell
         
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+        }
+        
         let account = accounts[indexPath.row]
         cell.configureCell(account: account)
 

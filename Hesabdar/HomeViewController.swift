@@ -55,6 +55,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var givingMonthLabel: UILabel!
     @IBOutlet weak var gettingMonthLabel: UILabel!
     
+    // last transaction
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var noDataLabel: UILabel!
+    
     // MARK: - Init
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -83,6 +90,7 @@ class HomeViewController: UIViewController {
         let percent = NumberFormatter()
         percent.numberStyle = .percent
         percent.maximumFractionDigits = 1
+        percent.minusSign = ""
         let data = PieChartData(dataSet: dataSet)
         data.setValueFormatter(DefaultValueFormatter(formatter: percent))
         pieChart.data = data
@@ -97,13 +105,15 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         
-        let tagBtn = UIBarButtonItem(title: "برچسب ها", style: .plain, target: self, action: #selector(openTags))
+        let tagBtn = UIBarButtonItem(image: UIImage(named: "tag"), style: .plain, target: self, action: #selector(openTags))
         navigationItem.leftBarButtonItem = tagBtn
         
         pieChart.legend.form = .circle
         pieChart.legend.xEntrySpace = 20
+        pieChart.legend.font = UIFont(name: "IRANSans(FaNum)", size: 10)!
         pieChart.chartDescription?.text = ""
-        pieChart.drawEntryLabelsEnabled = !pieChart.drawEntryLabelsEnabled
+        pieChart.drawEntryLabelsEnabled = false
+        pieChart.usePercentValuesEnabled = false
     }
     
     func openTags() {
@@ -115,6 +125,7 @@ class HomeViewController: UIViewController {
         setAndFetchTags()
         setAndFetchAccounts()
         setAndFetchTransactions()
+        setLastTransaction()
         
         circularProgress.angle = 0
         budgetLabel.text = String(getSum())
@@ -131,6 +142,41 @@ class HomeViewController: UIViewController {
         }
         circularProgress.animate(toAngle: Double(angle), duration: 0.5, completion: nil)
         setDataCount()
+    }
+    
+    func setLastTransaction() {
+        if !transactions.isEmpty {
+            let transaction = transactions.last
+            noDataLabel.alpha = 0
+            titleLabel.alpha = 1
+            valueLabel.alpha = 1
+            tagLabel.alpha = 1
+            accountLabel.alpha = 1
+            
+            titleLabel.text = transaction?.title
+            tagLabel.text = transaction?.tagName
+            valueLabel.text = String(Int((transaction?.value)!))
+            
+            var tagColor = UIColor.gray
+            if transaction?.tagName != "بدون برچسب", transaction?.tagName != "دریافت" {
+                tagColor = getColor(ofTag: (transaction?.tagName!)!)
+            }
+            let accTitle = getAccountName(withID: (transaction?.accID!)!)
+            
+            tagLabel.textColor = tagColor
+            
+            if transaction?.tagName == "دریافت" {
+                accountLabel.text = "به حساب " + accTitle
+            } else {
+                accountLabel.text = "از حساب " + accTitle
+            }
+        } else {
+            noDataLabel.alpha = 1
+            titleLabel.alpha = 0
+            valueLabel.alpha = 0
+            tagLabel.alpha = 0
+            accountLabel.alpha = 0
+        }
     }
     
     // MARK: - Fetch data
