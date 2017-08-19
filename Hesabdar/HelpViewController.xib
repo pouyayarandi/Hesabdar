@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSans(FaNum).ttf">
+            <string>IRANSansFaNum</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpViewController" customModule="Hesabdar" customModuleProvider="target">
+            <connections>
+                <outlet property="slider" destination="jjP-Ft-e91" id="91u-Z9-szm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjP-Ft-e91">
+                    <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jjP-Ft-e91" secondAttribute="height" multiplier="1:1" id="m88-n3-Glc"/>
+                    </constraints>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="به حسابدار خوش آمدید" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-rZ-gMq">
+                    <rect key="frame" x="107.5" y="60" width="160" height="29"/>
+                    <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A33-be-d6Y">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5ef-Di-EUw"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSa-4H-8bD" customClass="RoundedButton" customModule="Hesabdar" customModuleProvider="target">
+                    <rect key="frame" x="157.5" y="587" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.00093938748749999997" green="0.75234697669999995" blue="0.0014574069559999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="ALU-es-3Xo"/>
+                        <constraint firstAttribute="width" secondItem="YSa-4H-8bD" secondAttribute="height" multiplier="1:1" id="Dm2-kf-IeM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="15"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="بستن"/>
+                    <connections>
+                        <action selector="closeHelp:" destination="-1" eventType="touchUpInside" id="UBC-Ge-8Ct"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.49402668030000002" blue="0.85257448189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YSa-4H-8bD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Bi-3j-w9w"/>
+                <constraint firstAttribute="trailing" secondItem="A33-be-d6Y" secondAttribute="trailing" id="6d7-oc-Ldo"/>
+                <constraint firstItem="yEf-rZ-gMq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AWt-Er-ZMx"/>
+                <constraint firstItem="jjP-Ft-e91" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Elb-34-mzj"/>
+                <constraint firstAttribute="bottom" secondItem="A33-be-d6Y" secondAttribute="bottom" id="NTC-74-D31"/>
+                <constraint firstAttribute="bottom" secondItem="YSa-4H-8bD" secondAttribute="bottom" constant="20" id="gbA-iP-Im0"/>
+                <constraint firstItem="A33-be-d6Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rwR-wg-5u8"/>
+                <constraint firstAttribute="trailing" secondItem="jjP-Ft-e91" secondAttribute="trailing" id="s6k-GP-ib2"/>
+                <constraint firstItem="yEf-rZ-gMq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="u5v-SW-gpn"/>
+                <constraint firstItem="jjP-Ft-e91" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="wx5-i3-X27"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

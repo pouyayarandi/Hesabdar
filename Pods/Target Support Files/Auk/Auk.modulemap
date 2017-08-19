@@ -1,0 +1,6 @@
+framework module Auk {
+  umbrella header "Auk-umbrella.h"
+
+  export *
+  module * { export * }
+}

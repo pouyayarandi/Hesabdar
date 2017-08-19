@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAccountViewController" customModule="Hesabdar" customModuleProvider="target">
             <connections>
+                <outlet property="balanceField" destination="zLA-or-AlT" id="hnC-Dp-iEG"/>
                 <outlet property="idField" destination="DkX-lm-wDU" id="Wfs-wz-YBF"/>
                 <outlet property="titleField" destination="GrO-bO-bdq" id="Xt6-kI-JGy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -65,15 +66,37 @@
                         <constraint firstItem="DkX-lm-wDU" firstAttribute="trailing" secondItem="rnj-wq-AEm" secondAttribute="trailingMargin" constant="-8" id="ykY-dt-sPJ"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31H-YG-MI2">
+                    <rect key="frame" x="0.0" y="110" width="375" height="44"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="موجودی اولیه (با کیبورد انگلیسی وارد کنید)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-or-AlT">
+                            <rect key="frame" x="16" y="8" width="343" height="28"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="zLA-or-AlT" firstAttribute="leading" secondItem="31H-YG-MI2" secondAttribute="leadingMargin" constant="8" id="aNV-rB-k33"/>
+                        <constraint firstItem="zLA-or-AlT" firstAttribute="trailing" secondItem="31H-YG-MI2" secondAttribute="trailingMargin" constant="-8" id="aQd-Xw-FCF"/>
+                        <constraint firstItem="zLA-or-AlT" firstAttribute="top" secondItem="31H-YG-MI2" secondAttribute="topMargin" id="fZi-BQ-f3J"/>
+                        <constraint firstItem="zLA-or-AlT" firstAttribute="bottom" secondItem="31H-YG-MI2" secondAttribute="bottomMargin" id="jxv-jn-OtW"/>
+                        <constraint firstAttribute="height" constant="44" id="rvx-6X-4XK"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="rnj-wq-AEm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="D00-iT-isE"/>
+                <constraint firstItem="31H-YG-MI2" firstAttribute="top" secondItem="rnj-wq-AEm" secondAttribute="bottom" constant="1" id="DkD-vw-FCx"/>
+                <constraint firstItem="31H-YG-MI2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FV0-vY-MV6"/>
                 <constraint firstAttribute="trailing" secondItem="bWY-2o-owv" secondAttribute="trailing" id="Hx1-ez-Iuc"/>
                 <constraint firstItem="bWY-2o-owv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XJa-5E-x8O"/>
                 <constraint firstItem="rnj-wq-AEm" firstAttribute="top" secondItem="bWY-2o-owv" secondAttribute="bottom" constant="1" id="ZIg-21-b2R"/>
                 <constraint firstAttribute="trailing" secondItem="rnj-wq-AEm" secondAttribute="trailing" id="ctV-Af-dES"/>
                 <constraint firstItem="bWY-2o-owv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="hl7-2v-QXg"/>
+                <constraint firstAttribute="trailing" secondItem="31H-YG-MI2" secondAttribute="trailing" id="zC9-bh-wzT"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="34.5" y="54.5"/>

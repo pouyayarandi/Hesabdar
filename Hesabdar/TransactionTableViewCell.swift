@@ -10,7 +10,7 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
-    let format = NumberFormatter()
+    let model = Model()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class TransactionTableViewCell: UITableViewCell {
     func configureCell(transaction: Transaction) {
         self.titleLabel.text = transaction.title
         self.tagLabel.text = transaction.tagName
-        self.valueLabel.text = String(Int(transaction.value))
+        self.valueLabel.text = model.format().string(from: transaction.value as NSNumber)
     }
     
     @IBOutlet weak var titleLabel: UILabel!

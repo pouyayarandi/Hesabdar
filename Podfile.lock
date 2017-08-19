@@ -1,17 +1,23 @@
 PODS:
+  - Auk (7.0.1):
+    - moa
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
   - KDCircularProgress (1.5.2)
+  - moa (8.0.4)
 
 DEPENDENCIES:
+  - Auk (~> 7.0)
   - Charts
   - KDCircularProgress (~> 1.5.2)
 
 SPEC CHECKSUMS:
+  Auk: 6f8c4e93427d0d02641263776dd3b66ae4050903
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
+  moa: 954e2ad962886626d02c3486dd3a7bb5f0052d14
 
-PODFILE CHECKSUM: c04d0c31a331fa44b838bdfc42cc9f7450e51f92
+PODFILE CHECKSUM: d428d936bda55e29b70a4609814d6fef64497ffb
 
 COCOAPODS: 1.1.1

@@ -13,6 +13,7 @@ class TransactionDetailViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    let model = Model()
     var tags = [Tag]()
     var accounts = [Account]()
     var transaction: Transaction?
@@ -97,7 +98,7 @@ class TransactionDetailViewController: UIViewController {
     
     func viewConfigs() {
         titleLabel.text = transaction?.title
-        valueLabel.text = String(Int((transaction?.value)!))
+        valueLabel.text = model.format().string(from: (transaction?.value as NSNumber?)!)
         accountLabel.text = getAccountName(withID: (transaction?.accID)!)
         tagLabel.text = transaction?.tagName
         tagLabel.textColor = getColor(ofTag: (transaction?.tagName)!)

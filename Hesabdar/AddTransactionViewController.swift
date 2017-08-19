@@ -17,13 +17,15 @@ class AddTransactionViewController: UIViewController {
     var getting = false
     var edit = false
     var index = 0
-    let color = Color()
+    let model = Model()
 
     var tags = [Tag]()
     var accounts = [Account]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        valueField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         viewConfigs()
         
         if edit {
@@ -174,6 +176,22 @@ class AddTransactionViewController: UIViewController {
         }
     }
     
+    // MARK: - Textfield
+    
+    func textFieldDidChange(textField: UITextField) {
+        if textField == valueField, textField.text != "" {
+            var text = textField.text ?? ""
+            var fineText = ""
+            for char in text.characters {
+                if char != "," {
+                    fineText.append(char)
+                }
+            }
+            let value = Int(fineText) ?? 0
+            textField.text = model.format().string(from: value as NSNumber)
+        }
+    }
+    
     // MARK: - View configs
     
     func viewConfigs() {
@@ -237,7 +255,7 @@ class AddTransactionViewController: UIViewController {
                 transaction.accID = selectedAcc?.accID ?? "0"
                 
                 if valueField.text != "" {
-                    let val = Float(valueField.text!)!
+                    let val = Float(model.format().number(from: valueField.text!)!)
                     if getting {
                         transaction.value = val
                     } else {

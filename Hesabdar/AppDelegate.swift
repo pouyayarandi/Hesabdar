@@ -14,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let defaults = UserDefaults()
     let bar = UITabBarController()
+    let button = UIButton(type: .custom)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -32,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nav2.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 17)!, NSForegroundColorAttributeName: UIColor.white]
         nav3.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "IRANSans(FaNum)", size: 17)!, NSForegroundColorAttributeName: UIColor.white]
         
-        let color = Color()
-        UIBarButtonItem.appearance().setTitleTextAttributes(color.font(size: 15), for: .normal)
+        let model = Model()
+        UIBarButtonItem.appearance().setTitleTextAttributes(model.font(size: 15), for: .normal)
         
         nav1.viewControllers = [transTable]
         nav2.viewControllers = [accountTable]
@@ -53,26 +55,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         goToHome()
         
         let size: CGFloat = 55
-        let button = UIButton(type: .custom)
         let point = bar.tabBar.center
         button.frame = CGRect(x: point.x - size/2, y: point.y - size/2 + 10, width: size, height: size)
         button.layer.cornerRadius = size/2
         button.clipsToBounds = true
-        //button.layer.borderWidth = 0.5
-        //button.layer.borderColor = UIColor.gray.cgColor
         button.backgroundColor = UIColor(red: 0, green: 192/255, blue: 0, alpha: 1)
         button.setImage(#imageLiteral(resourceName: "home"), for: .normal)
         bar.view.addSubview(button)
         button.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
-        // config button shadow
         button.layer.shadowColor = UIColor.gray.cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 0)
         button.layer.shadowRadius = 5
         button.layer.shadowOpacity = 0.7
         button.layer.masksToBounds = false
         
+        if defaults.value(forKey: "FirstTime") == nil {
+            let help = HelpViewController(nibName: "HelpViewController", bundle: nil)
+            window?.rootViewController = help
+            defaults.set(true, forKey: "FirstTime")
+        } else {
+            window?.rootViewController = bar
+        }
+        
         UIApplication.shared.statusBarStyle = .lightContent
-        window?.rootViewController = bar
         window?.makeKeyAndVisible()
         
         return true

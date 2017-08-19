@@ -15,7 +15,7 @@ class AccountTableViewController: UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var accounts = [Account]()
-    let color = Color()
+    let model = Model()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,7 +112,7 @@ class AccountTableViewController: UITableViewController {
     
     func viewConfigs() {
         navigationItem.title = "حساب ها"
-        self.navigationController?.navigationBar.barTintColor = color.blue()
+        self.navigationController?.navigationBar.barTintColor = model.blue()
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         

@@ -9,13 +9,16 @@
 import UIKit
 import CoreData
 
-class AddAccountViewController: UIViewController {
+class AddAccountViewController: UIViewController, UITextFieldDelegate {
     
-    let color = Color()
+    let model = Model()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        balanceField.delegate = self
+        balanceField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         viewConfigs()
     }
 
@@ -25,6 +28,7 @@ class AddAccountViewController: UIViewController {
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var idField: UITextField!
+    @IBOutlet weak var balanceField: UITextField!
     
     // MARK: - Init
     
@@ -36,11 +40,27 @@ class AddAccountViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Textfield
+    
+    func textFieldDidChange(textField: UITextField) {
+        if textField == balanceField, textField.text != "" {
+            var text = textField.text ?? ""
+            var fineText = ""
+            for char in text.characters {
+                if char != "," {
+                    fineText.append(char)
+                }
+            }
+            let value = Int(fineText) ?? 0
+            textField.text = model.format().string(from: value as NSNumber)
+        }
+    }
+    
     // MARK: - View configs
     
     func viewConfigs() {
         navigationItem.title = "ثبت حساب"
-        self.navigationController?.navigationBar.barTintColor = color.blue()
+        self.navigationController?.navigationBar.barTintColor = model.blue()
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         
@@ -50,7 +70,6 @@ class AddAccountViewController: UIViewController {
     
     func save() {
         if let title = titleField.text, title != "", let id = idField.text, id != "" {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let entity = NSEntityDescription.entity(forEntityName: "Account", in: context)
             let account = Account(entity: entity!, insertInto: context)
             
@@ -66,7 +85,29 @@ class AddAccountViewController: UIViewController {
             }
             
             self.navigationController?.popViewController(animated: true)
+            
+            if balanceField.text != "" {
+                saveBalance()
+            }
         }
     }
     
+    func saveBalance() {
+        let entity = NSEntityDescription.entity(forEntityName: "Transaction", in: context)
+        let transaction = Transaction(entity: entity!, insertInto: context)
+        
+        transaction.title = "موجودی اولیه حساب " + titleField.text!
+        transaction.value = Float(model.format().number(from: balanceField.text!)!)
+        transaction.date = NSDate()
+        transaction.accID = idField.text
+        transaction.tagName = "دریافت"
+        
+        context.insert(transaction)
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+    }
 }

@@ -15,7 +15,7 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
     var searchResult = [Transaction]()
     var tags = [Tag]()
     var accounts = [Account]()
-    let color = Color()
+    let model = Model()
     
     @IBOutlet weak var searchField: UITextField!
     
@@ -171,7 +171,7 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
     
     func viewConfigs() {
         navigationItem.title = "تراکنش ها"
-        self.navigationController?.navigationBar.barTintColor = color.blue()
+        self.navigationController?.navigationBar.barTintColor = model.blue()
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         

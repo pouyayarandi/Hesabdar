@@ -13,7 +13,7 @@ class TagTableViewController: UITableViewController {
     
     var onChooseWindow = false
     var tags = [Tag]()
-    let color = Color()
+    let model = Model()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
     override func viewDidLoad() {
@@ -106,7 +106,7 @@ class TagTableViewController: UITableViewController {
     
     func viewConfigs() {
         navigationItem.title = "برچسب ها"
-        self.navigationController?.navigationBar.barTintColor = color.blue()
+        self.navigationController?.navigationBar.barTintColor = model.blue()
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         

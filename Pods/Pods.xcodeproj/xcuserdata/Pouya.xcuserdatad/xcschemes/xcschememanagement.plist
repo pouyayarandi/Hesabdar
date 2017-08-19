@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Auk.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Charts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,15 +24,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>moa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>14465FC28324FBB065DDCCBD77FA238C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1A8F8331E1A25F4BC836B061C9C1AF2D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>322428ECC8C5EC71F14C92233787C7AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D2B2DC86875E3DBA35284765381A575</key>
+		<key>C6DEFA22CCEEB5F1F1D43D157996301F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

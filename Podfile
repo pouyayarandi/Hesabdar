@@ -4,5 +4,6 @@ use_frameworks!
 
 target 'Hesabdar' do
 	pod 'KDCircularProgress', '~> 1.5.2’
+	pod 'Auk', '~> 7.0'
 	pod ‘Charts’
 end

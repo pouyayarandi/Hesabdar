@@ -18,7 +18,7 @@ struct TagWithValue {
 
 class HomeViewController: UIViewController {
     
-    let color = Color()
+    let model = Model()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var transactions = [Transaction]()
@@ -101,7 +101,7 @@ class HomeViewController: UIViewController {
     
     func viewConfigs() {
         navigationItem.title = "خانه"
-        self.navigationController?.navigationBar.barTintColor = color.blue()
+        self.navigationController?.navigationBar.barTintColor = model.blue()
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
         
@@ -128,11 +128,11 @@ class HomeViewController: UIViewController {
         setLastTransaction()
         
         circularProgress.angle = 0
-        budgetLabel.text = String(getSum())
-        givingLabel.text = String(getSumGivings())
-        gettingLabel.text = String(getSumGettings())
-        givingMonthLabel.text = String(getGivingsOfMonth())
-        gettingMonthLabel.text = String(getGettingsOfMonth())
+        budgetLabel.text = model.format().string(from: getSum() as NSNumber)
+        givingLabel.text = model.format().string(from: getSumGivings() as NSNumber)
+        gettingLabel.text = model.format().string(from: getSumGettings() as NSNumber)
+        givingMonthLabel.text = model.format().string(from: getGivingsOfMonth() as NSNumber)
+        gettingMonthLabel.text = model.format().string(from: getGettingsOfMonth() as NSNumber)
     }
     
     func setValuesAfter() {
@@ -155,7 +155,7 @@ class HomeViewController: UIViewController {
             
             titleLabel.text = transaction?.title
             tagLabel.text = transaction?.tagName
-            valueLabel.text = String(Int((transaction?.value)!))
+            valueLabel.text = model.format().string(from: (transaction?.value as NSNumber?)!)
             
             var tagColor = UIColor.gray
             if transaction?.tagName != "بدون برچسب", transaction?.tagName != "دریافت" {
