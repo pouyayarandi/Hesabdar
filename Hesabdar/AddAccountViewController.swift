@@ -17,6 +17,7 @@ class AddAccountViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        titleField.delegate = self
         balanceField.delegate = self
         balanceField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         viewConfigs()
@@ -54,6 +55,14 @@ class AddAccountViewController: UIViewController, UITextFieldDelegate {
             let value = Int(fineText) ?? 0
             textField.text = model.format().string(from: value as NSNumber)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField == titleField {
+            idField.becomeFirstResponder()
+        }
+        return true
     }
     
     // MARK: - View configs

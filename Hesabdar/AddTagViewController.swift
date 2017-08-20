@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
-class AddTagViewController: UIViewController {
+class AddTagViewController: UIViewController, UITextFieldDelegate {
     
     var color: UIColor?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleField.delegate = self
         viewConfigs()
         chooseStack.transform = CGAffineTransform(translationX: 0, y: 250)
     }
@@ -85,6 +86,14 @@ class AddTagViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.chooseStack.transform = CGAffineTransform(translationX: 0, y: 250)
         })
+    }
+    
+    // MARK: - Textfield
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        goUp()
+        return true
     }
     
     // MARK: - Color pallett

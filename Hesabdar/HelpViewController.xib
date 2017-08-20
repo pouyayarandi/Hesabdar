@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpViewController" customModule="Hesabdar" customModuleProvider="target">
             <connections>
+                <outlet property="closeBtn" destination="YSa-4H-8bD" id="Qcj-nW-8fN"/>
                 <outlet property="slider" destination="jjP-Ft-e91" id="91u-Z9-szm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,8 +34,8 @@
                         <constraint firstAttribute="width" secondItem="jjP-Ft-e91" secondAttribute="height" multiplier="1:1" id="m88-n3-Glc"/>
                     </constraints>
                 </scrollView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="به حسابدار خوش آمدید" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-rZ-gMq">
-                    <rect key="frame" x="107.5" y="60" width="160" height="29"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="به حسابدار خوش آمدید" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-rZ-gMq">
+                    <rect key="frame" x="8" y="60" width="359" height="29"/>
                     <fontDescription key="fontDescription" name="IRANSansFaNum" family="IRANSans(FaNum)" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -64,9 +66,10 @@
             <constraints>
                 <constraint firstItem="YSa-4H-8bD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Bi-3j-w9w"/>
                 <constraint firstAttribute="trailing" secondItem="A33-be-d6Y" secondAttribute="trailing" id="6d7-oc-Ldo"/>
-                <constraint firstItem="yEf-rZ-gMq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AWt-Er-ZMx"/>
                 <constraint firstItem="jjP-Ft-e91" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Elb-34-mzj"/>
                 <constraint firstAttribute="bottom" secondItem="A33-be-d6Y" secondAttribute="bottom" id="NTC-74-D31"/>
+                <constraint firstItem="yEf-rZ-gMq" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="Xtd-Zd-Ajb"/>
+                <constraint firstItem="yEf-rZ-gMq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="ZDS-Xx-pUz"/>
                 <constraint firstAttribute="bottom" secondItem="YSa-4H-8bD" secondAttribute="bottom" constant="20" id="gbA-iP-Im0"/>
                 <constraint firstItem="A33-be-d6Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rwR-wg-5u8"/>
                 <constraint firstAttribute="trailing" secondItem="jjP-Ft-e91" secondAttribute="trailing" id="s6k-GP-ib2"/>

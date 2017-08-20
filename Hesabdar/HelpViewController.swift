@@ -9,22 +9,20 @@
 import UIKit
 import Auk
 
-class HelpViewController: UIViewController {
+class HelpViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        slider.delegate = self
         viewConfig()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBOutlet weak var slider: UIScrollView!
+    @IBOutlet weak var closeBtn: UIButton!
     
     @IBAction func closeHelp(_ sender: Any) {
         let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -44,10 +42,17 @@ class HelpViewController: UIViewController {
     // MARK: - View config
     
     func viewConfig() {
-        slider.auk.show(image: UIImage(named: "tag")!)
-        slider.auk.show(image: UIImage(named: "transaction")!)
-        slider.auk.show(image: UIImage(named: "giving")!)
-        slider.auk.show(image: UIImage(named: "getting")!)
+        for i in 1...4 {
+            slider.auk.show(image: UIImage(named: String(i))!)
+        }
+        closeBtn.transform = CGAffineTransform(translationX: 0, y: 100)
     }
-
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if slider.auk.currentPageIndex == 3 {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.closeBtn.transform = CGAffineTransform.identity
+            })
+        }
+    }
 }

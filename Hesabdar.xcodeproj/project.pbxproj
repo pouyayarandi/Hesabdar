@@ -657,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9C0AC6F3C322EC4C77A83C05 /* Pods-Hesabdar.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z5GH44G8KH;
 				INFOPLIST_FILE = Hesabdar/Info.plist;
@@ -671,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F83C4DA07F426D16A2968A68 /* Pods-Hesabdar.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z5GH44G8KH;
 				INFOPLIST_FILE = Hesabdar/Info.plist;

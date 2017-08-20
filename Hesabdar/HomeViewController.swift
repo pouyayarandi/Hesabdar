@@ -93,8 +93,11 @@ class HomeViewController: UIViewController {
         percent.minusSign = ""
         let data = PieChartData(dataSet: dataSet)
         data.setValueFormatter(DefaultValueFormatter(formatter: percent))
-        pieChart.data = data
-        pieChart.animate(xAxisDuration: 0.5)
+        let giving = getSumGivings()
+        if giving != 0, !tags.isEmpty {
+            pieChart.data = data
+            pieChart.animate(xAxisDuration: 0.5)
+        }
     }
     
     // MARK: - Config view
@@ -111,6 +114,8 @@ class HomeViewController: UIViewController {
         pieChart.legend.form = .circle
         pieChart.legend.xEntrySpace = 20
         pieChart.legend.font = UIFont(name: "IRANSans(FaNum)", size: 10)!
+        pieChart.noDataText = "اطلاعاتی جهت رسم نمودار وجود ندارد"
+        pieChart.noDataFont = UIFont(name: "IRANSans(FaNum)", size: 12)!
         pieChart.chartDescription?.text = ""
         pieChart.drawEntryLabelsEnabled = false
         pieChart.usePercentValuesEnabled = false

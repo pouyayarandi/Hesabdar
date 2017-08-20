@@ -48,6 +48,12 @@ class TransactionTableViewController: UITableViewController, UITextFieldDelegate
         }
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        tableView.isEditing = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

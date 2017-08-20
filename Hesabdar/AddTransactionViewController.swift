@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddTransactionViewController: UIViewController {
+class AddTransactionViewController: UIViewController, UITextFieldDelegate {
     
     var selectedAcc: Account?
     var selectedTag: Tag?
@@ -27,6 +27,9 @@ class AddTransactionViewController: UIViewController {
         
         valueField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         viewConfigs()
+        
+        valueField.delegate = self
+        titleField.delegate = self
         
         if edit {
             titleField.text = transaction?.title
@@ -190,6 +193,14 @@ class AddTransactionViewController: UIViewController {
             let value = Int(fineText) ?? 0
             textField.text = model.format().string(from: value as NSNumber)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField == titleField {
+            valueField.becomeFirstResponder()
+        }
+        return true
     }
     
     // MARK: - View configs
