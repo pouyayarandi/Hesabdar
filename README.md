@@ -6,14 +6,15 @@ __حسابدار یک پروژه‌ی آزاد است و بیشتر جنبه‌�
 
 ### اسکرین شات
 در زیر میتوانید اسکرین شات هایی از برنامه را مشاهده کنید
-![alt 1](http://uupload.ir/files/nepi_1.png)
 
-![alt 2](http://uupload.ir/files/gf8n_2.png)
+<img src="http://uupload.ir/files/nepi_1.png" width="200">
 
-![alt 3](http://uupload.ir/files/pn47_3.png)
+<img src="http://uupload.ir/files/gf8n_2.png" width="200">
 
-![alt 4](http://uupload.ir/files/r0ft_4.png)
+<img src="http://uupload.ir/files/pn47_3.png" width="200">
 
-![alt 5](http://uupload.ir/files/pn9k_5.png)
+<img src="http://uupload.ir/files/r0ft_4.png" width="200">
+
+<img src="http://uupload.ir/files/pn9k_5.png" width="200">
 
 طراحی و اجرا توسط *پویا یارندی*
